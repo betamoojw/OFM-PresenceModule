@@ -291,7 +291,8 @@ bool Presence::getHardwarePresence()
 
 bool Presence::getHardwareMove()
 {
-    return mMove;
+    // return mMove;
+    return MoveTrigger;
 }
 
 // Starting all required sensors, this call may be blocking (with delay)
@@ -310,7 +311,7 @@ void Presence::startSensors()
             logDebugP("Using HF sensor HLKLD2420");
 
             mPresenceSensor = openknxSensorDevicesModule.factory(SENS_HLKLD2420, MeasureType::Pres);
-            static_cast<SensorHLKLD2420 *>(mPresenceSensor)->defaultSensorParameters(ParamPM_HfSensitivity, ParamPM_HfDelayTime, ParamPM_HfRangeGateMin, ParamPM_HfRangeGateMax);
+            // static_cast<SensorHLKLD2420 *>(mPresenceSensor)->defaultSensorParameters(ParamPM_HfSensitivity, ParamPM_HfDelayTime, ParamPM_HfRangeGateMin, ParamPM_HfRangeGateMax);
             break;
         default:
             break;
@@ -567,6 +568,8 @@ void Presence::processHardwarePresence()
                         mDistance = lValue;
                         GroupObject &lKo = knx.getGroupObject(PM_KoMoveSpeedOut);
                         lKo.value(mDistance, getDPT(VAL_DPT_14));
+                        if (lValue > 0)
+                            MoveTrigger = true;
                     }
                 }
                 break;
@@ -597,6 +600,7 @@ void Presence::processHardwarePresence()
             mPresenceDelay = millis();
             mMove = 1;
             mPresenceChanged = true;
+            MoveTrigger = true;
         }
     }
     else
