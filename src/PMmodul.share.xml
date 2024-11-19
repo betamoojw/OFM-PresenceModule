@@ -11,9 +11,10 @@
   <op:config name="%PM_ColWidthHlkDiffCell%" value="52%" />
   <op:config name="%PM_ColWidthHlkDiffSpace%" value="12%" />
   <op:config name="%PM_ColWidthHlkHeaderDescription%" value="23%" />
-  <op:config name="%PM_ColWidthHlkHeaderCell%" value="8%" />
-  <op:config name="%PM_ColWidthHlkHeaderCellFirst%" value="7%" />
-  <op:config name="%PM_ColWidthHlkHeaderSpace%" value="4%" />
+  <op:config name="%PM_ColWidthHlkHeaderCell%" value="7%" />
+  <op:config name="%PM_ColWidthHlkHeaderCellFirst%" value="6%" />
+  <op:config name="%PM_ColWidthHlkHeaderSpace%" value="5%" />
+  <op:config name="%PM_ColWidthHlkHeaderCellLast%" value="8%" />
 
   <!-- Helper methods, do not warn -->
   <op:nowarn id="3" regex="PM_calcParamName" />
@@ -84,10 +85,10 @@
                 <TypeText SizeInBit="120" />
               </ParameterType>
               <ParameterType Id="%AID%_PT-dBValue" Name="dBValue">
-                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="0" maxInclusive="9600" />
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="0" maxInclusive="9332" />
               </ParameterType>
               <ParameterType Id="%AID%_PT-dBValueDelta" Name="dBValueDelta">
-                <TypeNumber SizeInBit="16" Type="signedInt" minInclusive="-9600" maxInclusive="9600" />
+                <TypeNumber SizeInBit="16" Type="signedInt" minInclusive="-9332" maxInclusive="9332" />
               </ParameterType>
               <ParameterType Id="%AID%_PT-ActiveInaktive" Name="ActiveInaktive">
                 <TypeRestriction Base="Value" SizeInBit="1">
@@ -108,39 +109,39 @@
               <ParameterType Id="%AID%_PT-HfRangeGateMin" Name="HfRangeGateMin">
                 <TypeRestriction Base="Value" SizeInBit="4">
                   <Enumeration Text="0.0 m" Value="0" Id="%ENID%" />
-                  <Enumeration Text="0.7 m" Value="1" Id="%ENID%" />
-                  <Enumeration Text="1.4 m" Value="2" Id="%ENID%" />
-                  <Enumeration Text="2.1 m" Value="3" Id="%ENID%" />
-                  <Enumeration Text="2.8 m" Value="4" Id="%ENID%" />
-                  <Enumeration Text="3.5 m" Value="5" Id="%ENID%" />
-                  <Enumeration Text="4.2 m" Value="6" Id="%ENID%" />
-                  <Enumeration Text="4.9 m" Value="7" Id="%ENID%" />
-                  <Enumeration Text="5.6 m" Value="8" Id="%ENID%" />
-                  <Enumeration Text="6.3 m" Value="9" Id="%ENID%" />
-                  <Enumeration Text="7.0 m" Value="10" Id="%ENID%" />
-                  <Enumeration Text="7.7 m" Value="11" Id="%ENID%" />
-                  <Enumeration Text="8.4 m" Value="12" Id="%ENID%" />
-                  <Enumeration Text="9.1 m" Value="13" Id="%ENID%" />
-                  <Enumeration Text="9.8 m" Value="14" Id="%ENID%" />
+                  <Enumeration Text="0.35 m" Value="1" Id="%ENID%" />
+                  <Enumeration Text="1.05 m" Value="2" Id="%ENID%" />
+                  <Enumeration Text="1.75 m" Value="3" Id="%ENID%" />
+                  <Enumeration Text="2.45 m" Value="4" Id="%ENID%" />
+                  <Enumeration Text="3.15 m" Value="5" Id="%ENID%" />
+                  <Enumeration Text="3.85 m" Value="6" Id="%ENID%" />
+                  <Enumeration Text="4.55 m" Value="7" Id="%ENID%" />
+                  <Enumeration Text="5.25 m" Value="8" Id="%ENID%" />
+                  <Enumeration Text="5.95 m" Value="9" Id="%ENID%" />
+                  <Enumeration Text="6.65 m" Value="10" Id="%ENID%" />
+                  <Enumeration Text="7.35 m" Value="11" Id="%ENID%" />
+                  <Enumeration Text="8.05 m" Value="12" Id="%ENID%" />
+                  <Enumeration Text="8.75 m" Value="13" Id="%ENID%" />
+                  <Enumeration Text="9.45 m" Value="14" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
               <ParameterType Id="%AID%_PT-HfRangeGateMax" Name="HfRangeGateMax">
                 <TypeRestriction Base="Value" SizeInBit="4">
-                  <Enumeration Text="0.7 m" Value="1" Id="%ENID%" />
-                  <Enumeration Text="1.4 m" Value="2" Id="%ENID%" />
-                  <Enumeration Text="2.1 m" Value="3" Id="%ENID%" />
-                  <Enumeration Text="2.8 m" Value="4" Id="%ENID%" />
-                  <Enumeration Text="3.5 m" Value="5" Id="%ENID%" />
-                  <Enumeration Text="4.2 m" Value="6" Id="%ENID%" />
-                  <Enumeration Text="4.9 m" Value="7" Id="%ENID%" />
-                  <Enumeration Text="5.6 m" Value="8" Id="%ENID%" />
-                  <Enumeration Text="6.3 m" Value="9" Id="%ENID%" />
-                  <Enumeration Text="7.0 m" Value="10" Id="%ENID%" />
-                  <Enumeration Text="7.7 m" Value="11" Id="%ENID%" />
-                  <Enumeration Text="8.4 m" Value="12" Id="%ENID%" />
-                  <Enumeration Text="9.1 m" Value="13" Id="%ENID%" />
-                  <Enumeration Text="9.8 m" Value="14" Id="%ENID%" />
-                  <Enumeration Text="10.5 m " Value="15" Id="%ENID%" />
+                  <Enumeration Text="1.05 m" Value="1" Id="%ENID%" />
+                  <Enumeration Text="1.75 m" Value="2" Id="%ENID%" />
+                  <Enumeration Text="2.45 m" Value="3" Id="%ENID%" />
+                  <Enumeration Text="3.15 m" Value="4" Id="%ENID%" />
+                  <Enumeration Text="3.85 m" Value="5" Id="%ENID%" />
+                  <Enumeration Text="4.55 m" Value="6" Id="%ENID%" />
+                  <Enumeration Text="5.25 m" Value="7" Id="%ENID%" />
+                  <Enumeration Text="5.95 m" Value="8" Id="%ENID%" />
+                  <Enumeration Text="6.65 m" Value="9" Id="%ENID%" />
+                  <Enumeration Text="7.35 m" Value="10" Id="%ENID%" />
+                  <Enumeration Text="8.05 m" Value="11" Id="%ENID%" />
+                  <Enumeration Text="8.75 m" Value="12" Id="%ENID%" />
+                  <Enumeration Text="9.45 m" Value="13" Id="%ENID%" />
+                  <Enumeration Text="10.15 m" Value="14" Id="%ENID%" />
+                  <Enumeration Text="10.85 m" Value="15" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
               <ParameterType Id="%AID%_PT-HfMeasures" Name="HfMeasures">
@@ -157,9 +158,9 @@
               </ParameterType>
               <ParameterType Id="%AID%_PT-HfView" Name="HfView">
                 <TypeRestriction Base="Value" SizeInBit="2">
-                  <Enumeration Text="Standard" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Kompakt" Value="0" Id="%ENID%" />
                   <Enumeration Text="Mit Hilfsfunktionen" Value="1" Id="%ENID%" />
-                  <Enumeration Text="Mit Memory" Value="2" Id="%ENID%" />
+                  <Enumeration Text="Mit Speicher" Value="2" Id="%ENID%" />
                   <Enumeration Text="Alles" Value="3" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
@@ -454,14 +455,14 @@
                 <Parameter Id="%AID%_UP-%TT%00021" Name="PirSensitivity" ParameterType="%AID%_PT-Sensitivity" Offset="1" BitOffset="4" Text="PIR-Empfindlichkeit" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00006" Name="HfPresence" Offset="2" BitOffset="0" ParameterType="%AID%_PT-HfSensor" Text="HF-Sensor" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00015" Name="HfScenario" ParameterType="%AID%_PT-HfScenario" Offset="2" BitOffset="3" Text="Detektions-Szenario" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%00025" Name="HlkSettings" ParameterType="%AID%_PT-HlkSettings" Offset="2" BitOffset="3" Text="HF-Einstellungen" Value="1" Access="None"/>
+                <Parameter Id="%AID%_UP-%TT%00025" Name="HlkSettings" ParameterType="%AID%_PT-HlkSettings" Offset="2" BitOffset="3" Text="HF-Einstellungen" Value="1" Access="None" />
                 <Parameter Id="%AID%_UP-%TT%00007" Name="HWLux" Offset="2" BitOffset="6" ParameterType="%AID%_PT-LuxSensor" Text="Helligkeits-Sensor" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00016" Name="HfSensitivity" ParameterType="%AID%_PT-Sensitivity" Offset="3" BitOffset="0" Text="HF-Empfindlichkeit" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00003" Name="SendRAW" Offset="3" BitOffset="4" ParameterType="%AID%_PT-OnOffYesNo" Text="Präsenz-Rohdaten auf den Bus senden?" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00008" Name="ReadLed" Offset="3" BitOffset="5" ParameterType="%AID%_PT-OnOffYesNo" Text="Wert nach einem Neustart lesen?" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00022" Name="PirPresence" Offset="3" BitOffset="6" ParameterType="%AID%_PT-PirSensor" Text="PIR-Sensor" Value="0" />
                 <!-- Hardware HF-Sensor settings -->
-                <Parameter Id="%AID%_UP-%TT%00017" Name="HfDelayTime" ParameterType="%AID%_PT-HfDelayTime" Offset="4" BitOffset="0" Text="Verzögerung" Value="30" />
+                <Parameter Id="%AID%_UP-%TT%00017" Name="HfDelayTime" ParameterType="%AID%_PT-HfDelayTime" Offset="4" BitOffset="0" Text="Haltedauer" Value="30" />
                 <Parameter Id="%AID%_UP-%TT%00018" Name="HfRangeGateMin" ParameterType="%AID%_PT-HfRangeGateMin" Offset="6" BitOffset="0" Text="Minimale Entfernung" Value="1" />
                 <Parameter Id="%AID%_UP-%TT%00019" Name="HfRangeGateMax" ParameterType="%AID%_PT-HfRangeGateMax" Offset="6" BitOffset="4" Text="Maximale Entfernung" Value="8" />
               </Union>
@@ -494,13 +495,30 @@
               <Parameter Id="%AID%_P-%TT%99906" Name="M2Trigger" ParameterType="%AID%_PT-CheckBox" Text="M2 enthält Trigger-Daten" Value="0" Access="Read" />
               <Parameter Id="%AID%_P-%TT%99907" Name="M2Hold" ParameterType="%AID%_PT-CheckBox" Text="M2 enthält Halten-Daten" Value="0" Access="Read" />
               <Parameter Id="%AID%_P-%TT%99920" Name="HlkFormula" ParameterType="%AID%_PT-HlkFormula" Text="Formel" Value="1" />
-              <Parameter Id="%AID%_P-%TT%99921" Name="HlkFormulaTarget" ParameterType="%AID%_PT-HlkFormulaTarget" Text="Ziel" Value="0" />
+              <Parameter Id="%AID%_P-%TT%99921" Name="HlkFormulaTarget" ParameterType="%AID%_PT-HlkFormulaTarget" Text="Ziel" Value="2" />
               <Parameter Id="%AID%_P-%TT%99922" Name="HlkFormulaSensitivity" ParameterType="%AID%_PT-Sensitivity2" Text="Empfindlichkeit" Value="90" SuffixText="%" />
               <Parameter Id="%AID%_P-%TT%99923" Name="HlkFormulaOffset" ParameterType="%AID%_PT-HlkFormulaOffset" Text="Offset" Value="100" />
               <Parameter Id="%AID%_P-%TT%99924" Name="HlkMeasure1" ParameterType="%AID%_PT-HfMeasures" Text="Sub1" Value="0" />
               <Parameter Id="%AID%_P-%TT%99925" Name="HlkMeasure2" ParameterType="%AID%_PT-HfMeasures" Text="Sub2" Value="2" />
               <Parameter Id="%AID%_P-%TT%99926" Name="HlkView" ParameterType="%AID%_PT-HfView" Text="Anzeige" Value="0" />
-              <Parameter Id="%AID%_P-%TT%99927" Name="HlkSuppressWarning" ParameterType="%AID%_PT-CheckBox" Text="Obige Information nicht mehr anzeigen" Value="0" Access="None"/>
+              <Parameter Id="%AID%_P-%TT%99927" Name="HlkSuppressWarning" ParameterType="%AID%_PT-CheckBox" Text="Obige Information nicht mehr anzeigen" Value="0" Access="None" />
+              <!-- HLK-HF-Sensor management (active columns) -->
+              <Parameter Id="%AID%_P-%TT%99930" Name="HlkActiveCol00" ParameterType="%AID%_PT-CheckBox" Text="ActCol00" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99931" Name="HlkActiveCol01" ParameterType="%AID%_PT-CheckBox" Text="ActCol01" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99932" Name="HlkActiveCol02" ParameterType="%AID%_PT-CheckBox" Text="ActCol02" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99933" Name="HlkActiveCol03" ParameterType="%AID%_PT-CheckBox" Text="ActCol03" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99934" Name="HlkActiveCol04" ParameterType="%AID%_PT-CheckBox" Text="ActCol04" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99935" Name="HlkActiveCol05" ParameterType="%AID%_PT-CheckBox" Text="ActCol05" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99936" Name="HlkActiveCol06" ParameterType="%AID%_PT-CheckBox" Text="ActCol06" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99937" Name="HlkActiveCol07" ParameterType="%AID%_PT-CheckBox" Text="ActCol07" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99938" Name="HlkActiveCol08" ParameterType="%AID%_PT-CheckBox" Text="ActCol08" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99939" Name="HlkActiveCol09" ParameterType="%AID%_PT-CheckBox" Text="ActCol09" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99940" Name="HlkActiveCol10" ParameterType="%AID%_PT-CheckBox" Text="ActCol10" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99941" Name="HlkActiveCol11" ParameterType="%AID%_PT-CheckBox" Text="ActCol11" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99942" Name="HlkActiveCol12" ParameterType="%AID%_PT-CheckBox" Text="ActCol12" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99943" Name="HlkActiveCol13" ParameterType="%AID%_PT-CheckBox" Text="ActCol13" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99944" Name="HlkActiveCol14" ParameterType="%AID%_PT-CheckBox" Text="ActCol14" Value="1" />
+              <Parameter Id="%AID%_P-%TT%99945" Name="HlkActiveCol15" ParameterType="%AID%_PT-CheckBox" Text="ActCol15" Value="1" />
             </Parameters>
             <ParameterRefs>
               <!-- <ParameterRef Id="%AID%_P-%TT%00001_R-%TT%%AID%_UP-%TT%000210000101" RefId="%AID%_P-%TT%00001" /> -->
@@ -546,6 +564,22 @@
               <ParameterRef Id="%AID%_P-%TT%99925_R-%TT%9992501" RefId="%AID%_P-%TT%99925" />
               <ParameterRef Id="%AID%_P-%TT%99926_R-%TT%9992601" RefId="%AID%_P-%TT%99926" />
               <ParameterRef Id="%AID%_P-%TT%99927_R-%TT%9992701" RefId="%AID%_P-%TT%99927" />
+              <ParameterRef Id="%AID%_P-%TT%99930_R-%TT%9993001" RefId="%AID%_P-%TT%99930" />
+              <ParameterRef Id="%AID%_P-%TT%99931_R-%TT%9993101" RefId="%AID%_P-%TT%99931" />
+              <ParameterRef Id="%AID%_P-%TT%99932_R-%TT%9993201" RefId="%AID%_P-%TT%99932" />
+              <ParameterRef Id="%AID%_P-%TT%99933_R-%TT%9993301" RefId="%AID%_P-%TT%99933" />
+              <ParameterRef Id="%AID%_P-%TT%99934_R-%TT%9993401" RefId="%AID%_P-%TT%99934" />
+              <ParameterRef Id="%AID%_P-%TT%99935_R-%TT%9993501" RefId="%AID%_P-%TT%99935" />
+              <ParameterRef Id="%AID%_P-%TT%99936_R-%TT%9993601" RefId="%AID%_P-%TT%99936" />
+              <ParameterRef Id="%AID%_P-%TT%99937_R-%TT%9993701" RefId="%AID%_P-%TT%99937" />
+              <ParameterRef Id="%AID%_P-%TT%99938_R-%TT%9993801" RefId="%AID%_P-%TT%99938" />
+              <ParameterRef Id="%AID%_P-%TT%99939_R-%TT%9993901" RefId="%AID%_P-%TT%99939" />
+              <ParameterRef Id="%AID%_P-%TT%99940_R-%TT%9994001" RefId="%AID%_P-%TT%99940" />
+              <ParameterRef Id="%AID%_P-%TT%99941_R-%TT%9994101" RefId="%AID%_P-%TT%99941" />
+              <ParameterRef Id="%AID%_P-%TT%99942_R-%TT%9994201" RefId="%AID%_P-%TT%99942" />
+              <ParameterRef Id="%AID%_P-%TT%99943_R-%TT%9994301" RefId="%AID%_P-%TT%99943" />
+              <ParameterRef Id="%AID%_P-%TT%99944_R-%TT%9994401" RefId="%AID%_P-%TT%99944" />
+              <ParameterRef Id="%AID%_P-%TT%99945_R-%TT%9994501" RefId="%AID%_P-%TT%99945" />
             </ParameterRefs>
             <ParameterValidations>
               <ParameterValidation Id="%AID%_PV-%TT%00001" Name="MinLessMax" ValidationFunc="PM_distanceCheck">
@@ -579,6 +613,7 @@
               <ComObjectRef Id="%AID%_O-%TT%00006_R-%TT%0000602" RefId="%AID%_O-%TT%00006" Text="Ausgang Entfernung" FunctionText="Status" ObjectSize="4 Bytes" DatapointType="DPST-14-39" />
               <ComObjectRef Id="%AID%_O-%TT%00007_R-%TT%0000701" RefId="%AID%_O-%TT%00007" />
               <ComObjectRef Id="%AID%_O-%TT%00008_R-%TT%0000801" RefId="%AID%_O-%TT%00008" />
+              <ComObjectRef Id="%AID%_O-%TT%00008_R-%TT%0000802" RefId="%AID%_O-%TT%00008" Text="HF-Stichprobe nehmen" FunctionText="Trigger" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
               <ComObjectRef Id="%AID%_O-%TT%00009_R-%TT%0000901" RefId="%AID%_O-%TT%00009" />
               <!-- <ComObjectRef Id="%AID%_O-%TT%00010_R-%TT%0001001" RefId="%AID%_O-%TT%00010" /> -->
               <ComObjectRef Id="%AID%_O-%TT%00011_R-%TT%0001101" RefId="%AID%_O-%TT%00011" />
@@ -588,10 +623,10 @@
             </Script>
           </Static>
           <Dynamic>
-            <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Präsenzmelder" Icon="panorama-sphere-outline" HelpContext="PM-Dokumentation" >
+            <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Präsenzmelder" Icon="panorama-sphere-outline" HelpContext="PM-Dokumentation">
               <!-- <choose ParamRefId="%AID%_UP-%TT%00002_R-%TT%0000201"> -->
               <!-- <when test="1"> -->
-              <ParameterBlock Id="%AID%_PB-nnn" Name="Settings" Text="Allgemein" Icon="cog-outline" ShowInComObjectTree="true" HelpContext="PM-Dokumentation" >
+              <ParameterBlock Id="%AID%_PB-nnn" Name="Settings" Text="Allgemein" Icon="cog-outline" ShowInComObjectTree="true" HelpContext="PM-Dokumentation">
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Präsenzmelder" UIHint="Headline" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Version: %ModuleVersion%" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
@@ -612,9 +647,7 @@
                   </when>
                   <when test="3">
                     <!-- HLK-LD2420 -->
-                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Einstellungen bitte auf der Seite HF-Sensor vornehmen" Cell="1,2"/>
-                    <!-- Remove if really not necessary  -->
-                    <ParameterRefRef RefId="%AID%_UP-%TT%00025_R-%TT%0002501" IndentLevel="2" />
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Einstellungen bitte auf der Seite HF-Sensor vornehmen" Cell="1,2" />
                   </when>
                 </choose>
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
@@ -736,11 +769,7 @@
                       <when test="3">
                         <ComObjectRefRef RefId="%AID%_O-%TT%00002_R-%TT%0000202" />
                         <ComObjectRefRef RefId="%AID%_O-%TT%00006_R-%TT%0000602" />
-                        <choose ParamRefId="%AID%_UP-%TT%00025_R-%TT%0002501">
-                          <when test="0">
-                            <ComObjectRefRef RefId="%AID%_O-%TT%00008_R-%TT%0000801" />
-                          </when>
-                        </choose>
+                        <ComObjectRefRef RefId="%AID%_O-%TT%00008_R-%TT%0000802" />
                       </when>
                     </choose>
                     <choose ParamRefId="%AID%_UP-%TT%00022_R-%TT%0002201">
@@ -756,8 +785,8 @@
               <!-- * HLK Settings                                       -->
               <!-- *                                                    -->
               <!-- **************************************************** -->
-              <choose ParamRefId="%AID%_UP-%TT%00025_R-%TT%0002501">
-                <when test="1">
+              <choose ParamRefId="%AID%_UP-%TT%00006_R-%TT%0000601">
+                <when test="3">
                   <ParameterBlock Id="%AID%_PB-nnn" Name="ExtendedParameters" Text="HF-Sensor" Icon="radar">
                     <!-- Current view setting -->
                     <ParameterBlock Id="%AID%_PB-nnn" Inline="true" Layout="Grid">
@@ -769,24 +798,34 @@
                         <Column Id="%AID%_PB-nnn_C-2" Width="13%" />
                         <Column Id="%AID%_PB-nnn_C-3" Width="30%" />
                       </Columns>
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Manuelle Konfiguration" Cell="1,1" UIHint="Headline" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="HF-Sensor Konfiguration" Cell="1,1" UIHint="Headline" />
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="Anzeige" Cell="1,2" />
                       <ParameterRefRef RefId="%AID%_P-%TT%99926_R-%TT%9992601" Cell="1,3" />
                     </ParameterBlock>
-                    
+
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="In diesem Bereich können detaillierte Einstellungen für den HF-Sensor vorgenommen und direkt ausprobiert werden. Um aber die Eingaben dauerhaft im Sensor zu speichern, muss der Sensor über die ETS programmiert werden." />
-                    
+
                     <!-- Download app warning -->
                     <ParameterRefRef RefId="%AID%_P-%TT%99927_R-%TT%9992701" />
                     <choose ParamRefId="%AID%_P-%TT%99927_R-%TT%9992701">
                       <when test="0">
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
                         <ParameterSeparator Id="%AID%_PS-nnn" Text="Falls diese Applikation noch nicht mit der ETS auf das Gerät programmiert wurde, kann die Seite nicht funktionieren. Bitte zuerst das Gerät mit der ETS programmieren, danach eine andere Seite wählen und anschließend zu dieser Seite zurückkehren!" UIHint="Information" />
-                        <Button Id="%AID%_B-%TT%00009" Text="Obige Information nicht mehr anzeigen" EventHandler="PM_hideWarning" />
+                        <ParameterBlock Id="%AID%_PB-nnn" Inline="true" Layout="Grid">
+                          <Rows>
+                            <Row Id="%AID%_PB-nnn_R-1" />
+                          </Rows>
+                          <Columns>
+                            <Column Id="%AID%_PB-nnn_C-1" Width="55%" />
+                            <Column Id="%AID%_PB-nnn_C-2" Width="47%" />
+                          </Columns>
+                          <Button Id="%AID%_B-%TT%00009" Text="Obige Information nicht mehr anzeigen" Cell="1,2" EventHandler="PM_hideWarning" />
+                        </ParameterBlock>
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
                       </when>
                     </choose>
-                    
+
                     <!-- Delay, min and max Distance -->
-                    <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text=" " /> -->
                     <ParameterBlock Id="%AID%_PB-nnn" Inline="true" Layout="Grid">
                       <Rows>
                         <Row Id="%AID%_PB-nnn_R-1" />
@@ -796,7 +835,7 @@
                         <Column Id="%AID%_PB-nnn_C-2" Width="51%" />
                       </Columns>
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="Testen" Cell="1,1" />
-                      <Button Id="%AID%_B-%TT%00019" Text="Aktuelle Einstellungen ausprobieren" Cell="1,2" EventHandler="PM_setCalibrationDataSet" EventHandlerOnline="ConnectionOriented" />
+                      <Button Id="%AID%_B-%TT%00019" Text="Die folgenden Einstellungen ausprobieren" Cell="1,2" EventHandler="PM_setCalibrationDataSet" EventHandlerOnline="ConnectionOriented" />
                     </ParameterBlock>
 
                     <ParameterBlock Id="%AID%_PB-nnn" Inline="true" Layout="Grid">
@@ -810,7 +849,7 @@
                         <Column Id="%AID%_PB-nnn_C-3" Width="7%" />
                         <Column Id="%AID%_PB-nnn_C-4" Width="22%" />
                       </Columns>
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Verzögerung" Cell="1,1" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Haltedauer" Cell="1,1" />
                       <ParameterRefRef RefId="%AID%_UP-%TT%00017_R-%TT%0001701" Cell="1,2" />
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="Entfernung" Cell="2,1" />
                       <ParameterRefRef RefId="%AID%_UP-%TT%00018_R-%TT%0001801" Cell="2,2" />
@@ -856,40 +895,160 @@
                         <Column Id="%AID%_PB-nnn_C-29" Width="%PM_ColWidthHlkHeaderSpace%" />
                         <Column Id="%AID%_PB-nnn_C-30" Width="%PM_ColWidthHlkHeaderCell%" />
                         <Column Id="%AID%_PB-nnn_C-31" Width="%PM_ColWidthHlkHeaderSpace%" />
-                        <Column Id="%AID%_PB-nnn_C-32" Width="10%" />
+                        <Column Id="%AID%_PB-nnn_C-32" Width="%PM_ColWidthHlkHeaderCell%" />
+                        <Column Id="%AID%_PB-nnn_C-33" Width="%PM_ColWidthHlkHeaderSpace%" />
+                        <Column Id="%AID%_PB-nnn_C-34" Width="%PM_ColWidthHlkHeaderCellLast%" />
                       </Columns>
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Schwellwerte" Cell="1,1" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="0m" Cell="1,2" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,3" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="0.7m" Cell="1,4" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,5" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="1.4m" Cell="1,6" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,7" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="2.1m" Cell="1,8" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,9" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="2.8m" Cell="1,10" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,11" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="3.5m" Cell="1,12" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,13" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="4.2m" Cell="1,14" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,15" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="4.9m" Cell="1,16" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,17" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="5.6m" Cell="1,18" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,19" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="6.3m" Cell="1,20" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,21" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="7.0m" Cell="1,22" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,23" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="7.7m" Cell="1,24" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,25" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="8.4m" Cell="1,26" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,27" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="9.1m" Cell="1,28" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,29" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="9.8m" Cell="1,30" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,31" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="10.5m" Cell="1,32" UIHint="Headline" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Schwellwerte (m)" Cell="1,1" UIHint="Headline" />
+                      <choose ParamRefId="%AID%_UP-%TT%00018_R-%TT%0001801">
+                        <when test="0">
+                          <!-- Range 0 -->
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="0" Cell="1,2" UIHint="Headline" />
+                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,3" UIHint="Headline" /> -->
+                          <ParameterRefRef RefId="%AID%_P-%TT%99930_R-%TT%9993001" Cell="1,3" />
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="0.35" Cell="1,4" UIHint="Headline" />
+                        </when>
+                        <when test="&lt;=1">
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="0.35" Cell="1,4" UIHint="Headline" />
+                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,5" UIHint="Headline" /> -->
+                          <ParameterRefRef RefId="%AID%_P-%TT%99931_R-%TT%9993101" Cell="1,5" />
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="1.05" Cell="1,6" UIHint="Headline" />
+                        </when>
+                        <when test="&lt;=2">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;1">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="1.05" Cell="1,6" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,7" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99932_R-%TT%9993201" Cell="1,7" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="1.75" Cell="1,8" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=3">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;2">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="1.75" Cell="1,8" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,9" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99933_R-%TT%9993301" Cell="1,9" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="2.45" Cell="1,10" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=4">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;3">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="2.45" Cell="1,10" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,11" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99934_R-%TT%9993401" Cell="1,11" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="3.15" Cell="1,12" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=5">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;4">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="3.15" Cell="1,12" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,13" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99935_R-%TT%9993501" Cell="1,13" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="3.85" Cell="1,14" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=6">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;5">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="3.85" Cell="1,14" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,15" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99936_R-%TT%9993601" Cell="1,15" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="4.55" Cell="1,16" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=7">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;6">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="4.55" Cell="1,16" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,17" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99937_R-%TT%9993701" Cell="1,17" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="5.25" Cell="1,18" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=8">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;7">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="5.25" Cell="1,18" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,19" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99938_R-%TT%9993801" Cell="1,19" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="5.95" Cell="1,20" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=9">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;8">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="5.95" Cell="1,20" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,21" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99939_R-%TT%9993901" Cell="1,21" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="6.65" Cell="1,22" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=10">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;9">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="6.65" Cell="1,22" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,23" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99940_R-%TT%9994001" Cell="1,23" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="7.35" Cell="1,24" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=11">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;10">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="7.35" Cell="1,24" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,25" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99941_R-%TT%9994101" Cell="1,25" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="8.05" Cell="1,26" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=12">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;11">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="8.05" Cell="1,26" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,27" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99942_R-%TT%9994201" Cell="1,27" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="8.75" Cell="1,28" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                        <when test="&lt;=13">
+                          <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                            <when test="&gt;12">
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="8.75" Cell="1,28" UIHint="Headline" />
+                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,29" UIHint="Headline" /> -->
+                              <ParameterRefRef RefId="%AID%_P-%TT%99943_R-%TT%9994301" Cell="1,29" />
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="9.45" Cell="1,30" UIHint="Headline" />
+                            </when>
+                          </choose>
+                        </when>
+                      </choose>
+                      <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
+                        <when test="&gt;13">
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="9.45" Cell="1,30" UIHint="Headline" />
+                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,31" UIHint="Headline" /> -->
+                          <ParameterRefRef RefId="%AID%_P-%TT%99944_R-%TT%9994401" Cell="1,31" />
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="10.15" Cell="1,32" UIHint="Headline" />
+                        </when>
+                        <when test="&gt;14">
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="10.15" Cell="1,32" UIHint="Headline" />
+                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,33" UIHint="Headline" /> -->
+                          <ParameterRefRef RefId="%AID%_P-%TT%99945_R-%TT%9994501" Cell="1,33" />
+                          <ParameterSeparator Id="%AID%_PS-nnn" Text="10.85" Cell="1,34" UIHint="Headline" />
+                        </when>
+                      </choose>
                     </ParameterBlock>
                     <!-- Trigger and Hold values -->
                     <op:usePart name="HLK-ROW-DEVICE" xpath="//Dynamic/ChannelIndependentBlock/*" />
@@ -911,7 +1070,7 @@
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" Cell="1,2" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" Cell="1,3" />
                         </ParameterBlock>
-                        <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="Hilfsfunktionen zum füllen der Schwellwerte" UIHint="Headline" /> -->
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Hilfsfunktionen" UIHint="Headline" />
                         <ParameterBlock Id="%AID%_PB-nnn" Inline="true" Layout="Grid">
                           <Rows>
                             <Row Id="%AID%_PB-nnn_R-1" />
@@ -1058,58 +1217,57 @@
                           <ParameterRefRef RefId="%AID%_P-%TT%99906_R-%TT%9990601" Cell="3,3" />
                           <ParameterRefRef RefId="%AID%_P-%TT%99907_R-%TT%9990701" Cell="3,4" />
                           <!-- M1 Trigger -->
-                          <Button Id="%AID%_B-%TT%00028" Text="" Cell="2,3" Icon="arrow-left-bottom-bold" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Trigger&quot;, &quot;dataTarget&quot;:&quot;M1Trigger&quot; }"  />
+                          <Button Id="%AID%_B-%TT%00028" Text="" Cell="2,3" Icon="content-save-outline" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Trigger&quot;, &quot;dataTarget&quot;:&quot;M1Trigger&quot; }" />
                           <choose ParamRefId="%AID%_P-%TT%99901_R-%TT%9990101">
                             <when test="0">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="       leer" Cell="2,4" />
                             </when>
                             <when test="1">
-                              <Button Id="%AID%_B-%TT%00039" Text="" Cell="2,4" Icon="arrow-up-right-bold" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M1Trigger&quot;, &quot;dataTarget&quot;:&quot;Trigger&quot; }" />
+                              <Button Id="%AID%_B-%TT%00039" Text="" Cell="2,4" Icon="folder-open-outline" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M1Trigger&quot;, &quot;dataTarget&quot;:&quot;Trigger&quot; }" />
                               <Button Id="%AID%_B-%TT%00040" Text="" Cell="2,7" Icon="trash-can-outline" EventHandler="PM_clearMemory" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M1&quot; }" />
                             </when>
                           </choose>
                           <!-- M1 Halten -->
-                          <Button Id="%AID%_B-%TT%00029" Text="" Cell="2,5" Icon="arrow-left-bottom-bold" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Hold&quot;, &quot;dataTarget&quot;:&quot;M1Hold&quot; }"  />
+                          <Button Id="%AID%_B-%TT%00029" Text="" Cell="2,5" Icon="content-save-outline" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Hold&quot;, &quot;dataTarget&quot;:&quot;M1Hold&quot; }" />
                           <choose ParamRefId="%AID%_P-%TT%99902_R-%TT%9990201">
                             <when test="0">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="       leer" Cell="2,6" />
                             </when>
                             <when test="1">
-                              <Button Id="%AID%_B-%TT%00038" Text="" Cell="2,6" Icon="arrow-up-right-bold" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M1Hold&quot;, &quot;dataTarget&quot;:&quot;Hold&quot; }" />
+                              <Button Id="%AID%_B-%TT%00038" Text="" Cell="2,6" Icon="folder-open-outline" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M1Hold&quot;, &quot;dataTarget&quot;:&quot;Hold&quot; }" />
                               <Button Id="%AID%_B-%TT%00041" Text="" Cell="2,7" Icon="trash-can-outline" EventHandler="PM_clearMemory" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M1&quot; }" />
                             </when>
                           </choose>
                           <!-- M2 Trigger -->
-                          <Button Id="%AID%_B-%TT%00026" Text="" Cell="3,3" Icon="arrow-left-bottom-bold" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Trigger&quot;, &quot;dataTarget&quot;:&quot;M2Trigger&quot; }"  />
+                          <Button Id="%AID%_B-%TT%00026" Text="" Cell="3,3" Icon="content-save-outline" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Trigger&quot;, &quot;dataTarget&quot;:&quot;M2Trigger&quot; }" />
                           <choose ParamRefId="%AID%_P-%TT%99906_R-%TT%9990601">
                             <when test="0">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="       leer" Cell="3,4" />
                             </when>
                             <when test="1">
-                              <Button Id="%AID%_B-%TT%00035" Text="" Cell="3,4" Icon="arrow-up-right-bold" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M2Trigger&quot;, &quot;dataTarget&quot;:&quot;Trigger&quot; }" />
+                              <Button Id="%AID%_B-%TT%00035" Text="" Cell="3,4" Icon="folder-open-outline" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M2Trigger&quot;, &quot;dataTarget&quot;:&quot;Trigger&quot; }" />
                               <Button Id="%AID%_B-%TT%00042" Text="" Cell="3,7" Icon="trash-can-outline" EventHandler="PM_clearMemory" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M2&quot; }" />
                             </when>
                           </choose>
                           <!-- M2 Hold -->
-                          <Button Id="%AID%_B-%TT%00027" Text="" Cell="3,5" Icon="arrow-left-bottom-bold" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Hold&quot;, &quot;dataTarget&quot;:&quot;M2Hold&quot; }"  />
+                          <Button Id="%AID%_B-%TT%00027" Text="" Cell="3,5" Icon="content-save-outline" EventHandler="PM_setMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;Hold&quot;, &quot;dataTarget&quot;:&quot;M2Hold&quot; }" />
                           <choose ParamRefId="%AID%_P-%TT%99907_R-%TT%9990701">
                             <when test="0">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="       leer" Cell="3,6" />
                             </when>
                             <when test="1">
-                              <Button Id="%AID%_B-%TT%00034" Text="" Cell="3,6" Icon="arrow-up-right-bold" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M2Hold&quot;, &quot;dataTarget&quot;:&quot;Hold&quot; }" />
+                              <Button Id="%AID%_B-%TT%00034" Text="" Cell="3,6" Icon="folder-open-outline" EventHandler="PM_getMemoryData" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M2Hold&quot;, &quot;dataTarget&quot;:&quot;Hold&quot; }" />
                               <Button Id="%AID%_B-%TT%00043" Text="" Cell="3,7" Icon="trash-can-outline" EventHandler="PM_clearMemory" EventHandlerParameters="{ &quot;dataSource&quot;:&quot;M2&quot; }" />
                             </when>
                           </choose>
                         </ParameterBlock>
                       </when>
                     </choose>
-                    
+
                   </ParameterBlock>
                 </when>
               </choose>
-              <!-- </when> -->
-              <!-- </choose> -->
+
               <op:include href="PMmodul.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="PM" IsInner="true" />
               <choose ParamRefId="%AID%_UP-%TT%00020_R-%TT%0002001">
                 <when test="&lt;%N%">

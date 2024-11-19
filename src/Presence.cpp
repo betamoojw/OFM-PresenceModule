@@ -131,16 +131,16 @@ bool Presence::processCommand(const std::string iCmd, bool iDebugKo)
         if (iCmd.length() == 5 && iCmd.substr(4, 1) == "h")
         {
             // Command help
-            openknx.console.writeDiagenoseKo("-> hw");
-            openknx.console.writeDiagenoseKo("");
-            openknx.console.writeDiagenoseKo("-> chNN pres");
-            openknx.console.writeDiagenoseKo("");
-            openknx.console.writeDiagenoseKo("-> chNN leave");
-            openknx.console.writeDiagenoseKo("");
-            openknx.console.writeDiagenoseKo("-> chNN state");
-            openknx.console.writeDiagenoseKo("");
-            openknx.console.writeDiagenoseKo("-> chNN all");
-            openknx.console.writeDiagenoseKo("");
+            openknx.console.writeDiagnoseKo("-> hw");
+            openknx.console.writeDiagnoseKo("");
+            openknx.console.writeDiagnoseKo("-> chNN pres");
+            openknx.console.writeDiagnoseKo("");
+            openknx.console.writeDiagnoseKo("-> chNN leave");
+            openknx.console.writeDiagnoseKo("");
+            openknx.console.writeDiagnoseKo("-> chNN state");
+            openknx.console.writeDiagnoseKo("");
+            openknx.console.writeDiagnoseKo("-> chNN all");
+            openknx.console.writeDiagnoseKo("");
         }
         else if (iCmd.length() >= 8 || iCmd.substr(4, 2) == "ch")
         {
@@ -159,7 +159,7 @@ bool Presence::processCommand(const std::string iCmd, bool iDebugKo)
             logInfoP("Move %d, Presence %d", mMove, mPresence);
             if (iDebugKo)
             {
-                openknx.console.writeDiagenoseKo("Move %d, Pres %d", mMove, mPresence);
+                openknx.console.writeDiagnoseKo("Move %d, Pres %d", mMove, mPresence);
             }
             lResult = true;
         }
@@ -169,7 +169,7 @@ bool Presence::processCommand(const std::string iCmd, bool iDebugKo)
             logInfoP("VPM command with bad args");
             if (iDebugKo)
             {
-                openknx.console.writeDiagenoseKo("VPM: bad args");
+                openknx.console.writeDiagnoseKo("VPM: bad args");
             }
             lResult = true;
         }
@@ -212,23 +212,25 @@ void Presence::processInputKo(GroupObject &iKo)
         }
         case PM_KoHfSensitivity:
         {
-            int8_t lHfSensitivity = iKo.value(getDPT(VAL_DPT_5));
-            if (mHfSensitivity != lHfSensitivity)
-            {
 #ifdef HF_POWER_PIN
-                switch (ParamPM_HfPresence)
-                {
-                    case VAL_PM_PS_Hf_MR24xxB1:
+            switch (ParamPM_HfPresence)
+            {
+                case VAL_PM_PS_Hf_MR24xxB1:
+                    {
+                    int8_t lHfSensitivity = iKo.value(getDPT(VAL_DPT_5));
+                    if (mHfSensitivity != lHfSensitivity)
                         static_cast<SensorMR24xxB1 *>(mPresenceSensor)->sendCommand(RadarCmd_WriteSensitivity, lHfSensitivity);
-                        break;
-                    case VAL_PM_PS_Hf_HLKLD2420:
-                        static_cast<SensorHLKLD2420 *>(mPresenceSensor)->writeSensitivity(lHfSensitivity);
-                        break;
-                    default:
-                        break;
-                }
-#endif
+                    }
+                    break;
+                case VAL_PM_PS_Hf_HLKLD2420:
+                    // For LD2420 Sensibility is "start sample" call 
+                    logDebugP("Start calibration for HLKLD2420");
+                    static_cast<SensorHLKLD2420 *>(mPresenceSensor)->forceCalibration();
+                    break;
+                default:
+                    break;
             }
+#endif
             break;
         }
         case PM_KoScenario:
@@ -258,8 +260,8 @@ void Presence::processInputKo(GroupObject &iKo)
                     startPowercycleHfSensor();
                     break;
                 case VAL_PM_PS_Hf_HLKLD2420:
-                    logDebugP("Start calibration for HLKLD2420");
-                    static_cast<SensorHLKLD2420 *>(mPresenceSensor)->forceCalibration();
+                    logDebugP("Hard reset LD2420");
+                    static_cast<SensorHLKLD2420 *>(mPresenceSensor)->rebootSensorHard();
                     break;
                 default:
                     break;
@@ -570,6 +572,10 @@ void Presence::processHardwarePresence()
                         lKo.value(mDistance, getDPT(VAL_DPT_14));
                         if (lValue > 0)
                             MoveTrigger = true;
+                        if ((mMove > 0) != (lValue > 0)) {
+                            mMove = (lValue > 0);
+                            knx.getGroupObject(PM_KoMoveOut).value(mMove, getDPT(VAL_DPT_1));
+                        }
                     }
                 }
                 break;

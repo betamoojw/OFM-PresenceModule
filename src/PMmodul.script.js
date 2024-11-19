@@ -2,7 +2,7 @@
 function PM_distanceCheck(input, changed, prevValue, context) {
 
     if (input.RangeMin >= input.RangeMax)
-        return "Minimale Entfernung muss immer kleiner als die maximale Entfernung sein";
+        return "Zwischen minimaler und maximaler Entfernung muss immer mindestens 1 Meter liegen!";
     else
         return true;
 }
@@ -122,15 +122,21 @@ function PM_setCalibrationData(device, online, progress, dataKind, parName, perc
     parHfRangeGateMin = device.getParameterByName("PM_HfRangeGateMin");
     parHfRangeGateMax = device.getParameterByName("PM_HfRangeGateMax");
     progress.setProgress(percent + 10);
-    progress.setText("PM: Schreibe " + PM_dataKindText[dataKind] + " ...");
     var data = [3]; // command setCalibrationData
-    data = data.concat(dataKind, parHfRangeGateMin.value, parHfRangeGateMax.value, parHfDelayTime.value >> 8, parHfDelayTime & 0xFF); // subcommand 7=hold, 8=trigger; zero-terminated
+    data = data.concat(dataKind, parHfRangeGateMin.value, parHfRangeGateMax.value, parHfDelayTime.value >> 8, parHfDelayTime.value & 0xFF); // subcommand 7=hold, 8=trigger; zero-terminated
 
     // we write 16 x 2 Bytes
     for (var i = 0; i < 16; i++) {
-        var paramName = PM_calcParamName(parName, i);
-        parGridCell = device.getParameterByName(paramName);
-        var paramValue = parGridCell.value;
+        var paramValue;
+        var paramCheckBoxName = PM_calcParamName("HlkActiveCol",i);
+        var parCheckBox = device.getParameterByName(paramCheckBoxName);
+        if (parCheckBox.value && i >= parHfRangeGateMin.value && i <= parHfRangeGateMax.value ) {
+            var paramName = PM_calcParamName(parName, i);
+            parGridCell = device.getParameterByName(paramName);
+            paramValue = parGridCell.value;
+        } else {
+            paramValue = 9332;
+        }
         info("write: paramName: " + paramName + ",  paramValue: " + paramValue);
         data = data.concat(paramValue >> 8, paramValue & 0xFF);
     }
@@ -148,6 +154,7 @@ function PM_setCalibrationData(device, online, progress, dataKind, parName, perc
 
 function PM_setCalibrationDataSet(device, online, progress, context) {
     progress.setProgress(10);
+    progress.setText("PM: Schreibe Halten und Trigger ...");
     online.connect();
     PM_setCalibrationData(device, online, progress, 7, "Hold", 10);
     PM_setCalibrationData(device, online, progress, 8, "Trigger", 50);

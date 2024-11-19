@@ -140,14 +140,14 @@ bool PresenceChannel::processCommand(const std::string iCmd, bool iDebugKo)
                         // Short presence duration output is "L mm:ss S m:ss"
                         logInfoP("Long %02d:%02d, Short %1d:%02d", (lPresence / 60) % 60, lPresence % 60, (lPresenceShort / 60) % 10, lPresenceShort % 60);
                         if (iDebugKo)
-                            openknx.console.writeDiagenoseKo("L %02d:%02d S %1d:%02d", (lPresence / 60) % 60, lPresence % 60, (lPresenceShort / 60) % 10, lPresenceShort % 60);
+                            openknx.console.writeDiagnoseKo("L %02d:%02d S %1d:%02d", (lPresence / 60) % 60, lPresence % 60, (lPresenceShort / 60) % 10, lPresenceShort % 60);
                     }
                     else
                     {
                         // Short presence evaluation output is "L mm:ss D m:ss"
                         logInfoP("Long %02d:%02d, Delay %1d:%02d", (lPresence / 60) % 60, lPresence % 60, (-lPresenceShort / 60) % 10, -lPresenceShort % 60);
                         if (iDebugKo)
-                            openknx.console.writeDiagenoseKo("L %02d:%02d D %1d:%02d", (lPresence / 60) % 60, lPresence % 60, (-lPresenceShort / 60) % 10, -lPresenceShort % 60);
+                            openknx.console.writeDiagnoseKo("L %02d:%02d D %1d:%02d", (lPresence / 60) % 60, lPresence % 60, (-lPresenceShort / 60) % 10, -lPresenceShort % 60);
                     }
                 }
                 else
@@ -155,23 +155,23 @@ bool PresenceChannel::processCommand(const std::string iCmd, bool iDebugKo)
                     // Long presence output is "L mm:ss "
                     logInfoP("Long %02d:%02d ", (lPresence / 60) % 60, lPresence % 60);
                     if (iDebugKo)
-                        openknx.console.writeDiagenoseKo("L %02d:%02d ", (lPresence / 60) % 60, lPresence % 60);
+                        openknx.console.writeDiagnoseKo("L %02d:%02d ", (lPresence / 60) % 60, lPresence % 60);
                 }
             }
             else if (pCurrentState & STATE_RUNNING)
             {
-                logInfoP("there is no presence");
+                logInfoP("There is no presence");
                 if (iDebugKo)
-                    openknx.console.writeDiagenoseKo("no presence");
+                    openknx.console.writeDiagnoseKo("No presence");
             }
             else
             {
-                logInfoP("this channel is inactive");
+                logInfoP("This channel is inactive");
                 if (iDebugKo)
-                    openknx.console.writeDiagenoseKo("inactive");
+                    openknx.console.writeDiagnoseKo("Inactive");
             }
             if (iDebugKo && lIsAll)
-                openknx.console.writeDiagenoseKo("");
+                openknx.console.writeDiagnoseKo("");
             lResult = true;
         }
         if (lIsAll || iCmd.substr(9, 1) == "l") // leave or all
@@ -205,22 +205,22 @@ bool PresenceChannel::processCommand(const std::string iCmd, bool iDebugKo)
                 }
                 logInfoP(lOutput);
                 if (iDebugKo)
-                    openknx.console.writeDiagenoseKo(lOutput);
+                    openknx.console.writeDiagnoseKo(lOutput);
             }
             else if (pCurrentState & STATE_RUNNING)
             {
-                logInfoP("leave room is off");
+                logInfoP("Leave room is off");
                 if (iDebugKo)
-                    openknx.console.writeDiagenoseKo("no leave room");
+                    openknx.console.writeDiagnoseKo("No leave room");
             }
             else
             {
-                logInfoP("inactive");
+                logInfoP("Inactive");
                 if (iDebugKo)
-                    openknx.console.writeDiagenoseKo("inactive");
+                    openknx.console.writeDiagnoseKo("Inactive");
             }
             if (iDebugKo && lIsAll)
-                openknx.console.writeDiagenoseKo("");
+                openknx.console.writeDiagnoseKo("");
             lResult = true;
         }
         if (lIsAll || iCmd.substr(9, 1) == "s") // state or all
@@ -261,7 +261,7 @@ bool PresenceChannel::processCommand(const std::string iCmd, bool iDebugKo)
             lOutput[lIndex++] = 0;
             logInfoP(lOutput);
             if (iDebugKo)
-                openknx.console.writeDiagenoseKo(lOutput);
+                openknx.console.writeDiagnoseKo(lOutput);
             lResult = true;
         }
     }

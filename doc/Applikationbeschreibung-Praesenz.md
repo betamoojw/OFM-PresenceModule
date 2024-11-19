@@ -42,9 +42,9 @@ Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM
 * [Beispiele](#beispiele) (noch leer)
   <!-- * [Update der Applikation](#update-der-applikation) -->
 * [Unterstützte Hardware](#unterstützte-hardware)
-<!-- * Fortgeschrittene Funktionen
+* Fortgeschrittene Funktionen
   * [Diagnoseobjekt](#diagnoseobjekt)
--->
+
 
 ### ETS Konfiguration
 
@@ -560,13 +560,13 @@ Wird der Melder in den Modus **Manuell AUS** versetzt, wird das Licht ausgeschal
 Da der Manuellmodus entgegen der üblichen Gewohnheiten arbeitet (Licht geht nicht automatisch aus bzw. Licht geht nicht automatisch an) und man als Mensch dazu neigt, die Fehler bei der Technik und nicht bei sich selbst zu suchen (obwohl man vergessen hat, den Melder vom Manuell- in den Auto-Modus zu versetzen), bietet der Manuellmodus noch eine Rückfallzeit, nach der dieser Modus trotzdem verlassen wird. Hat man also abends das Licht über Manuell EIN eingeschaltet (weil man lesen will und bereits weiß, dass das Licht sonst beim lesen ausgeht) und geht danach ins Bett, würde man nicht am nächsten Morgen in einen immer noch hell erleuchteten Raum kommen, da eine auf 4 Stunden eingestellte Rückfallzeit den Melder wieder in den Normalmodus versetzt hat.
 
 <!-- DOC HelpContext="Praesenzkanal" -->
-## **PM*x*: *unbekannt***
+## **PM *x*: *...***
 
 Hier werden alle kanalspezifischen Präsenzmelder-Einstellungen vorgenommen. Da alle Kanäle identisch sind, wird nur ein Kanal beschrieben.
 
 Das *x* ist eine Zahl und steht für die Nummer des Kanals, der definiert wird.
 
-Der Text *unbekannt* wird durch die Beschreibung des Kanals ersetzt, sobald eine Beschreibung vergeben wurde.
+Die drei Punkte **...** werden durch die Beschreibung des Kanals ersetzt, sobald eine Beschreibung vergeben wurde.
 
 <!-- DOC Skip="1" -->
 <kbd>![PM-Kanal](pics/PM-Kanal.png)</kbd>
@@ -588,7 +588,7 @@ Die Angaben hier gelten zur Identifizierung und für das Grundverhalten des Kana
 
 Der hier angegebene Name wird an verschiedenen Stellen verwendet, um diesen Kanal wiederzufinden.
 
-* Seitenbeschreibung des Kanals: Der Text *unbekannt* wird ersetzt
+* Seitenbeschreibung des Kanals: Die drei Punkte **...** werden ersetzt
 * Name vom Kommunikationsobjekt: Statt "PM *x*" wird der Text benutzt
 
 Eine aussagekräftige Benennung erlaubt eine einfachere Orientierung innerhalb der Applikation, vor allem wenn man viele Kanäle nutzt.
@@ -712,7 +712,7 @@ Diese Auswahlbox unterstützt einige klassische Konstellationen:
 
 Ein Melder, dessen Nachlaufzeit sich nicht unter 30 Sekunden stellen lässt, sollte als **Präsenz** eingebunden werden.
 
-Melder, die kurze Nachlaufzeiten kleiner 30 Sekunden erlauben, sei es dass es Präsenzmelder oder Bewegungsmelder sind oder klassische über einen Binäreingang eingebundene Melder, sollten mit **Bewegung** eingebunden werden. Gute Erfahrungen wurden mich einer Nachlaufzeit von 7 Sekunden gemacht.
+Melder, die kurze Nachlaufzeiten kleiner 30 Sekunden erlauben, sei es dass es Präsenzmelder oder Bewegungsmelder sind oder klassische über einen Binäreingang eingebundene Melder, sollten mit **Bewegung** eingebunden werden. Gute Erfahrungen wurden mit einer Nachlaufzeit von 7 Sekunden gemacht.
 
 Melder, die eine an sich gute Präsenzerkennung bieten aber auch kurze Nachlaufzeiten, sollten mit 2 Kanälen also **Präsenz und Bewegung** eingebunden werden, wobei der Präsenzkanal etwa 30 Sekunden und der Bewegungskanal 5 bis 7 Sekunden Nachlaufzeit haben sollte.
 
@@ -737,7 +737,7 @@ Der externe Sensor liefert das Signal als schaltendes Objekt. Solange ein EIN-Si
 
 Der externe Sensor liefert das Signal als Trigger. Sobald ein EIN-Signal anliegt, ist Präsenz vorhanden und die Nachlaufzeit läuft an. Ein erneutes EIN setzt die Nachlaufzeit zurück, d.h. sie läuft erneut an. Ein AUS-Signal wird ignoriert.
 
-Der externe Sensor muss sicherstellen, dass er valide Signale häufiger sendet als die minimale Nachlaufzeit, die verwendet wird. Empfohlen wird ein zyklisches senden, mindestens doppelt so häufig wie die geringste verwendete Nachlaufzeit (Da die Nachlaufzeit tagesphasenabhängig ist und die Kurzzeitpräsenz auch eine Nachlaufzeit hat, muss die kürzeste Nachlaufzeit berücksichtigt werden).
+Der externe Sensor muss sicherstellen, dass er valide Signale häufiger sendet als die minimale Nachlaufzeit, die verwendet wird. Empfohlen wird ein zyklisches senden, mindestens doppelt so häufig wie die geringste verwendete Nachlaufzeit (da die Nachlaufzeit abhängig von der Tagesphase ist und die Kurzzeitpräsenz auch eine Nachlaufzeit hat, muss die kürzeste Nachlaufzeit berücksichtigt werden).
 
 > Achtung: Aus technischen Gründen wird bei triggerndem Betrieb das Eingangs-KO nach dem Empfangen einer 1 sofort wieder auf 0 gesetzt. Da dies ein Eingang ist, hat das üblicherweise keinerlei Auswirkungen. 
 
@@ -1564,6 +1564,86 @@ Eingang | Lesen | Interne Verknüpfung | Deaktiviert | Anmerkung
 | **Reset** | | X |  | Lesen bei Neustart macht keinen Sinn 
 | **Tagesphase** | X | X | bei nur einer Phase | 
 | **PM über Szene steuern** | X | X | | 
+
+
+## **Diagnoseobjekt**
+
+Das Diagnoseobjekt dient primär zu Debug-Zwecken, kann aber auch vom Enduser genutzt werden, um bestimmte interne Zustände vom Präsenzmelder zu überprüfen. 
+
+Es funktioniert wie ein einfaches Terminal. Man sendet an das KO 7 ein Kommando (Groß-Kleinschreibung beachten) und erhält über das gleiche KO eine Antwort. Im folgenden sind die Kommandos und die Antworten beschrieben.
+
+### **Kommando 'vpm help' - Kurzhilfe der Befehle**
+
+Gibt die verfügbaren Befehle für den Präsenzmelder aus. Da im Diagnoseobjekt nur 14 Zeichen zur Verfügung stehen, ist die Ausgabe sehr komprimiert. Es werden mehrere Antworten (Zeilen) an das Diagnoseobjekt geschickt, der Inhalt sind die möglichen Argumente für das "vpm" Kommando.
+
+Auf KO 7 (Diagnoseobjekt) muss der Befehl 'vpm help' (klein) gesendet werden.
+Die Antwort erfolgt auf KO 7 (Diagnoseobjekt). Folgende Liste wird sichtbar:
+
+    -> help
+    -> hw
+    -> chNN pres
+    -> chNN leave
+    -> chNN state
+    -> chNN all
+
+> Achtung: In einigen Versionen wurde nur der erste Buchstabe des Befehls akzeptiert, also z.B. vpm h. Aktuelle Versionen sollten beides unterstützen, falls das Eine nicht geht, sollte man das Andere ausprobieren.
+
+### **Kommando 'vpm hw' - Status vom Bewegungs- und Präsenzsignal**
+
+Gibt den Status vom internen Bewegungs- und Präsenzsignal des aktuellen Hardware-Sensors aus, falls einer angeschlossen ist.
+Fall kein Hardware-Sensor angeschlossen ist, wird auch etwas ausgegeben, aber die Werte sind undefiniert, weil nicht initialisiert.
+
+Auf KO 7 (Diagnoseobjekt) muss der Befehl 'vpm hw' (klein) gesendet werden. Die Antwort erfolgt auf KO 7 (Diagnoseobjekt) im Format 'Move X, Pres Y', wobei X und Y interne Werte des Hardware-Sensors sind (und sich pro Sensor unterscheiden können).
+
+### **vpm chNN pres - Status Präsenz**
+
+Gibt interne Informationen zur Präsenz und Nachlaufzeiten.
+
+Auf KO 7 (Diagnoseobjekt) muss der Befehl 'vpm chNN pres' gesendet werden, wobei NN die Nummer des zu untersuchenden Präsenzkanals ist.  Die Antwort erfolgt auf KO 7 (Diagnoseobjekt) je nach Zustand der Präsenz (MM sind immer Minuten, SS immer Sekunden):
+
+* ist der Präsenzkanal inaktiv, ist die Antwort 'inactive'.
+* ist keine Präsenz vorhanden, ist die Antwort 'no presence'.
+* bei normaler Präsenz (Langzeitpräsenz) ist die Antwort im Format 'L MM:SS' und gibt die verbleibende Nachlaufzeit an. 
+* bei aktiver Kurzzeitpräsenz ist die Antwort im Format 'L MM:SS S M:SS' und S zeigt die Zeit, die die Kurzzeitpräsenz noch aktiv ist. 
+* während der Nachlaufzeit der Kurzzeitpräsenz ist die Antowrt im Formal 'L MM:SS D M:SS' und D zeigt die Zeit, die noch verbleibt, um eine Bewegung festzustellen, die dann zur Langzeitpräsenz führt.
+
+### **vpm chNN leave - Status 'Raum verlassen'**
+
+Gibt interne Informationen zu der 'Raum verlassen'-Auswertung.
+
+Auf KO 7 (Diagnoseobjekt) muss der Befehl 'vpm chNN leave' gesendet werden, wobei NN die Nummer des zu untersuchenden Präsenzkanals ist.  Die Antwort erfolgt auf KO 7 (Diagnoseobjekt) je nach Zustand von 'Raum verlassen' (MM sind immer Minuten, SS immer Sekunden):
+
+* ist der Präsenzkanal inaktiv, ist die Antwort 'inactive'.
+* ist 'Raum verlassen' inaktiv, ist die Antwort 'no leave room'.
+* ist 'Raum verlassen' aktiv, ist die Antwort im Format 'L (TOT|T+R|B+T|BTR) T MM:SS', dabei zeigt
+
+  * L TOT T MM:SS, dass nur Totzeit eingestellt ist und die verbleibende Totzeit
+  * L T+R T MM:SS, dass Totzeit und Reset eingestellt ist und die verbleibende Totzeit bis zum Reset
+  * L B+T T MM:SS, dass Bewegung und Totzeit eingestellt ist und die verbleibende Totzeit
+  * L BTR T MM:SS, dass Bewegung + Totzeit + Reset eingestellt ist und die verbleibende Totzeit bis zum Reset
+
+### **vpm chNN state - interner Zustand des Kanals**
+
+Gibt den Zustand aus, in dem sich der Präsenzkanal befindet.
+
+Auf KO 7 (Diagnoseobjekt) muss der Befehl 'vpm chNN state' gesendet werden, wobei NN die Nummer des zu untersuchenden Präsenzkanals ist.  Die Antwort erfolgt auf KO 7 (Diagnoseobjekt) je nach internem Zustand vom Kanal mit einer folge von Zeichen-Indikatoren, die folgende Bedeutung haben:
+
+    [NAM][01] D[1-4][1-4] [L-][H-][X-][R-][T-]
+    
+* Interner Modus: N-Normalmodus, A-Auto, M-Manuell
+* Ausgang: 0=AUS, 1=EIN
+* Tagesphase: D
+* Aktuelle Tagesphase: 1-4
+* Nächste Tagesphase nach AUS: 1-4
+* Gesperrt: -=nein, L=ja
+* Adaptive Helligkeitsberechnung aktiv: -=nein, H=ja
+* Unterdrücke Helligkeitsbehandlung: -=nein, X=ja
+* Raum verlassen ist gerade aktiv: -=nein, R=ja
+* Totzeit ist gerade aktiv: -=nein, T=ja
+
+### **vpm chNN all - alle internen Zustände ausgeben**
+
+Gibt nacheinander pres, leave und state aus. Dieser Befehl sollte nicht zu häufig aufgerufen werden, da er sowohl den Bus belastet wie auch das interne Timing des Moduls stören könnte.
 
 ## **Kommunikationsobjekte**
 
