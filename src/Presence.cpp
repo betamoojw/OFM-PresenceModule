@@ -554,15 +554,15 @@ void Presence::processHardwarePresence()
                             PresenceTrigger = true;
                     }
                 }
-                if (openknxSensorDevicesModule.measureValue(MeasureType::Sensitivity, lValue))
-                {
-                    if (mHfSensitivity != (int8_t)lValue)
-                    {
-                        mHfSensitivity = (int8_t)lValue;
-                        GroupObject &lKo = knx.getGroupObject(PM_KoHfSensitivity);
-                        lKo.value(mHfSensitivity, getDPT(VAL_DPT_5));
-                    }
-                }
+                // if (openknxSensorDevicesModule.measureValue(MeasureType::Sensitivity, lValue))
+                // {
+                //     if (mHfSensitivity != (int8_t)lValue)
+                //     {
+                //         mHfSensitivity = (int8_t)lValue;
+                //         GroupObject &lKo = knx.getGroupObject(PM_KoHfSensitivity);
+                //         lKo.value(mHfSensitivity, getDPT(VAL_DPT_5));
+                //     }
+                // }
                 if (openknxSensorDevicesModule.measureValue(MeasureType::Distance, lValue))
                 {
                     if (mDistance != lValue)
@@ -570,10 +570,13 @@ void Presence::processHardwarePresence()
                         mDistance = lValue;
                         GroupObject &lKo = knx.getGroupObject(PM_KoMoveSpeedOut);
                         lKo.value(mDistance, getDPT(VAL_DPT_14));
-                        if (lValue > 0)
-                            MoveTrigger = true;
-                        if ((mMove > 0) != (lValue > 0)) {
-                            mMove = (lValue > 0);
+                        if (((mDistance <= 0.0) && (mMove > 0)) || ((mMove > 0) != (mDistance > 0.0) && delayCheck(mPresenceDelay, 500))) {
+                            mMove = (mDistance > 0.0);
+                            if (mMove > 0) 
+                            {
+                                MoveTrigger = true;
+                                mPresenceDelay = millis();
+                            }
                             knx.getGroupObject(PM_KoMoveOut).value(mMove, getDPT(VAL_DPT_1));
                         }
                     }
