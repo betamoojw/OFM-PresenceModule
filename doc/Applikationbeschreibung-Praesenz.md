@@ -359,8 +359,8 @@ Eine Sperre ist aber in einer solchen Situation meist ein viel zu grobes Werkzeu
 
 Unter diesem Tab sind alle Einstellungen für den Präsenzmelder zusammengefasst. Jeder der folgenden Tabs wird in einem eigenen Kapitel beschrieben.
 
-<!-- DOC -->
-### **PM-Hardware**
+<!-- DOC HelpContext="PM-Hardware" -->
+### **Allgemein**
 
 Da diese Applikation auch als virtueller Präsenzmelder fungieren kann, ist keine Präsenz-Hardware notwendig. Falls aber Präsenz-Hardware vorhanden ist, können auf dieser Seite deren Grundfunktionen parametriert werden. Diese Hardware kann dann bei den einzelnen PM-Kanälen weiterhin genutzt werden.
 
@@ -373,27 +373,11 @@ Da diese Applikation auch als virtueller Präsenzmelder fungieren kann, ist kein
 
 <!-- Das ist ein Kommentar -->
 
-Der vorhandene Hochfrequenz-Sensor kann hier ausgewählt werden. Derzeit werden entweder der HF-Sensor MR24xxB1 oder der HLK-LD2420 unterstützt.
-
-<!-- DOC -->
-#### **Helligkeits-Sensor**
-
-Der vorhandene Helligkeits-Sensor kann hier ausgewählt werden. Derzeit werden entweder der VEML7700 oder der OPT3001 unterstützt.
-
-<!-- DOC -->
-#### **PIR-Sensor**
-
-Der vorhandene Infrarot-Bewegungssensor kann hier ausgewählt werden. Derzeit wird sowohl ein analoger wie auch ein digitaler PIR-Sensor unterstützt. Beim analogen kann man noch die Empfindlichkeit einstellen.
-
-### Einstellungen Präsenz-Hardware
-
-Erscheint nur, wenn ein Hardware-Präsenzsensor ausgewählt ist.
-
-<kbd>![Präsenz-Rohdaten](pics/PraesenzRohdaten.png)</kbd>
+Der vorhandene Hochfrequenz-Sensor kann hier ausgewählt werden. Derzeit werden entweder der HF-Sensor MR24xxB1 oder der HLK-LD2420 unterstützt. Wird der HLK-LD2420 gewählt, dann werden die Einstellungen für diesen Sensor auf einer Eigenen Seite ["HF-Sensor"](#einstellungen-hf-sensor) vorgenommen.
 
 #### **Detektions-Szenario**
 
-Erscheint nur, wenn als Hardware-Präsenzsensor der HF-Sensor ausgewählt worden ist.
+Erscheint nur, wenn als Hardware-Präsenzsensor der HF-Sensor MR24xxB1 ausgewählt worden ist.
 
 <!-- DOC HelpContext="Detektions-Szenario" -->
 Hier kann man das vom Hersteller des HF-Sensors vorgesehene Szenario für die Detektion von Präsenz auswählen, das nach einem Neustart zur Verfügung steht. Die aufgeführten Werte sind dem technischen Dokument entnommen, inclusive der angenommenen Montage. Inwiefern das zum realen Einsatzort passt, können wir derzeit nicht beurteilen. Aktuelle Empfehlung ist, die Werte durchzuprobieren, bis man ein für sich passendes Erfassungsszenario gefunden hat. 
@@ -408,36 +392,45 @@ Der Wert für das Szenario kann auch über das KO 26 (Eingang Szenario) gesetzt 
 
 #### **Sensor-Empfindlichkeit**
 
-Erscheint nur, wenn als Hardware-Präsenzsensor der HF-Sensor ausgewählt worden ist.
+Erscheint nur, wenn als Hardware-Präsenzsensor der HF-Sensor MR24xxB1 ausgewählt worden ist.
 
 <!-- DOC HelpContext="Sensor-Empfindlichkeit" -->
 <!-- DOCCONTENT
 Hier kann die Sensor-Empfindlichkeit in 10%-Stufen eingestellt werden. 100% ist volle Empfindlichkeit, 10% ist 1/10 der vollen Empfindlichkeit. Eine niedrige Empfindlichkeit bedeutet geringe Präsenzerkennung, aber auch geringe Störeinflüsse. Eine hohe Empfindlichkeit bedeutet gute Präsenzerkennung, aber auch eine hohe Wahrscheinlichkeit von Störeinflüssen (z.B. Wind, Luftzug). Man sollte die Empfindlichkeit nach dem Motto 
 DOCCONTENT -->
 
-> So empfindlich wie nötig, aber so gering wie möglich
-
-wählen.
+> So empfindlich wie nötig, aber so gering wie möglich wählen.
 <!-- DOCEND -->
 
 Die Empfindlichkeit kann auch über das KO 27 (Eingang Empfindlichkeit) mit den Werten 1-10 gesetzt werden (wobei 1=10% bis 10=100% ist). Das KO 27 erscheint nur, wenn "Präsenz-Rohdaten auf den Bus senden" ausgewählt ist.
 
 
 <!-- DOC -->
-#### **Präsenz-Rohdaten auf den Bus senden?**
+### **PIR-Sensor**
+
+Der vorhandene Infrarot-Bewegungssensor kann hier ausgewählt werden. Derzeit wird sowohl ein analoger wie auch ein digitaler PIR-Sensor unterstützt. Beim analogen kann man noch die Empfindlichkeit einstellen.
+
+
+<!-- DOC -->
+### **Präsenz-Rohdaten auf den Bus senden?**
 
 Der Präsenzsensor kann seine Daten direkt auf den Bus senden, ohne jegliche Präsenzmelder-Funktionalität "dazwischen". 
 Diese Daten umfassen Informationen wie Präsenz, Bewegung, Bewegungsmoment, Bewegungsrichtung (auf den Sensor zu oder von ihm weg). 
 Mit einem Ja werden entsprechende Kommunikationsobjekte freigeschaltet, die diese Daten senden.
 
-### Helligkeit
+### **Helligkeit**
 
-Erscheint nur, wenn ein Hardware-Helligkeitssensor ausgewählt ist.
+<!-- DOC -->
+#### **Helligkeits-Sensor**
+
+Der vorhandene Helligkeits-Sensor kann hier ausgewählt werden. Derzeit werden entweder der VEML7700 oder der OPT3001 unterstützt.
 
 <kbd>![Helligkeit](pics/Helligkeit.png)</kbd>
 
 <!-- DOC -->
 #### **Korrektur Luxwert**
+
+Erscheint nur, wenn ein Hardware-Helligkeitssensor ausgewählt ist.
 
 Der vom Helligkeitssensor gemessene Luxwert kann hier korrigiert werden. Der auf den Bus gesendete Luxwert wird um den hier eingestellten Wert erhöht.
 
@@ -482,6 +475,7 @@ Erscheint nur, wenn irgendeine Präsenz-Hardware ausgewählt wurde.
 
 <kbd>![LED](pics/LED.png)</kbd>
 
+
 <!-- DOC HelpContext="LED-Dropdown" -->
 #### **LED Präsenz / LED Bewegung**
 
@@ -513,6 +507,226 @@ Erscheint nur, wenn eine LED über ein externes Objekt aktiviert werden soll.
 
 <!-- DOC HelpContext="LEDs-nach-Neustart-lesen" -->
 Wenn diese Funktion ausgewählt wird, werden nach einem Neustart passende Lesetelegramme gesendet, die den Zustand der LEDs abfragen.
+
+## **HF-Sensor Konfiguration**
+
+Der HLK-LD2420 (im Folgenden nur HLK genannt) ist ein HF-Sensor, der viele Möglichkeiten bietet, an den jeweiligen Raum angepasst zu werden und der sehr feine Bewegungen messen kann. Damit erlaubt er auch eine Nahezu-Präsenzerfassung, wie sie von bisherigen KNX-Präsenzmeldern bisher kaum erreicht wurde.
+
+<kbd>![HLK-Konfiguration](pics/HLK-Konfiguration.png)</kbd>
+
+Die Seite ist sehr komplex und deren Einstellungen werden im Folgenden schrittweise eingeführt. 
+
+### **Allgemeine Informationen**
+
+
+#### **Anzeige**
+
+Um den Benutzer nicht gleich mit dem Inhalt zu überfordern, hat die Seite in der oberen rechten Ecke ein Auswahlfeld "Anzeige", mit dem man die angezeigten Bereiche bestimmen kann:
+
+<kbd>![Anzeige](pics/HLK-Anzeige.png)</kbd>
+
+* **Kompakt** - es werden nur die notwendigen Bereiche mit Schwellwerten und den beiden Stichproben angezeigt.
+* **Mit Hilfsfunktionen** - zusätzlich zu Kompakt werden noch die Hilfsfunktionen angezeigt.
+* **Mit Speicher** - zusätzlich zu Kompakt wird noch der Speicherbereich angezeigt.
+* **Alles** - Es werden alle Arbeitsbereiche angezeigt.
+
+#### **Informationsfeld zur Applikation**
+
+<kbd>![Info](pics/HLK-Infomessage.png)</kbd>
+
+Diese Applikation nutzt die neusten ETS-Möglichkeiten, um mit dem Präsenzmelder und dem darin verbauten Sensor direkt zu kommunizieren. Leider verhält sich die ETS hier nicht besonders Nutzerfreundlich. Aus diesem Grunde wird der obige Hinweis eingeblendet.
+
+Damit diese Seite funktionieren kann, muss die Applikation auf das Gerät übertragen worden sein (das Gerät muss eine PA haben und programmiert worden sein). Technisch gesprochen muss über das Kommunikationsobjekt 1 (In Betrieb) in regelmäßigen Abständen eine "Ich lebe noch"-Meldung kommen. Wenn man das sichergestellt hat, kann man auf den Button "Obige Information nicht mehr anzeigen" klicken und die Information verschwindet für dieses Gerät für immer.
+
+Folgende Indikatoren gibt es in der Applikation, dass diese Initiale Programmierung fehlt:
+
+* Einige Buttons sind ausgegraut (wie im obigen Initialbild) - Dann ist noch nicht einmal eine PA zugewiesen worden
+* Beim drücken auf einen Button kommt "Gerät nicht erreichbar"
+* Nach einem Update der Applikation in der ETS wurde noch nicht wieder programmiert
+
+Durch ein erneutes Programmieren kann das Problem gelöst werden.
+
+### **Informationen zum Sensor**
+
+Die Seite versucht, die möglichen Einstellungen verfügbar zu machen. Um sinnvoll Einstellungen vornehmen und den Sensor an die eigenen Bedürfnisse anpassen zu können, muss man aber dass Messprinzip verstehen.
+
+Der HLK misst in 16 verschiedenen Entfernungsbereichen (vom Hersteller Ranges genannt) um seinen Einbauort "herum". Eine Range ist immer 70 cm. Die folgende Abbildung zeigt die ersten Ranges um den installierten Sensor (in der Bildmitte). Da der innere Range im Durchmesser 70 cm ist (blaue Linen), wir aber immer die Entfernungen vom Sensor zur Person betrachten, wirkt sich der erste Range nur in einer Entfernung von 35 cm aus (grüne Linie), alle folgenden Ranges dann mit 70 cm (braune Linien).
+
+<kbd>![HLK-Ranges](pics/HLK-Ringe.png)</kbd>
+
+Für jeden dieser Ranges kann man 2 Werte Festlegen, bei denen der Sensor was machen soll: 
+ 
+1. Einen oberen Trigger-Wert, der bei Überschreitung zum Einschalten führt. 
+2. Einen unteren Halten-Wert, der bei Unterschreitung zum Ausschalten führt.
+
+Das ist die aus KNX bekannte Hysterese-Funktion, nur wird die hier für bis zu 16 Ranges definiert.
+
+Die Grundidee für das Messprinzip ist ganz einfach. Der Sensor misst einen Reflexionswert in einer bestimmten Entfernung, wie auch immer dieser ermittelt wird. Jetzt schaut er bei der passenden Hysterese-Einstellung in der entsprechenden Entfernung nach den 2 Werten:
+
+1. Wird der Trigger-Wert überschritten, liefert der Sensor ein EIN-Signal
+2. Wird der Halten-Wert unterschritten, liefert der Sensor ein AUS-Signal
+
+Ein Mensch, der sich im Raum befindet, erhöht den Reflexionswert. Eine Bewegung im Raum erhöht den Reflexionswert sogar sehr stark. Dummerweise reflektieren aber auch alle anderen Dinge im Raum, so dass es immer einen Reflexionswert gibt (wir sprechen vom Grundrauschen). Man muss also immer passende Hysterese-Werte finden, die über dem Grundrauschen liegen und trotzdem die erhöhten Werte von Personen im Raum erkennen.
+
+Eine weitere Schwierigkeit liegt in der Tatsache, dass nicht immer der gleiche Reflexionswert gemessen wird. Die Werte schwanken. Deswegen muss man auch mit einer Hysterese arbeiten.
+
+Ferner will man nicht, dass ein kurzer Abfall des Reflexionswertes unter den Haltewert sofort zum AUS führt, wenn die Werte danach wieder über dem Haltewert liegen. Um so etwas zu vermeiden, benötigt man noch eine Haltezeit, die der Sensor im EIN-Zustand bleibt. Erst wenn alle Reflexionen unter dem Halten-Wert für die Haltezeit bleiben, liefert der Sensor ein AUS.
+
+Als letzten Punkt muss es noch die Möglichkeit geben, die Ranges abzuschalten, aus den man keine Reflexionen messen will, weil diese Bereiche einen nicht interessieren. In einem Raum mit 5 m Durchmesser, bei dem der Sensor in der Mitte hängt, will man sicher nicht Entfernungen von mehr als 3 m berücksichtigen.
+
+Mit den obigen Erklärungen sind die Begriffe auf dem oberen Teil des Einstellungen für den HLK eingeführt. Bei einer neuen Applikation sind die Werte für den Sensor mit den Standardeinstellungen des Herstellers ausgefüllt und können direkt so programmiert werden. Diese Einstellungen können funktionieren, müssen aber nicht.
+
+<kbd>![HLK-Einstellungen](pics/HLK-Einstellungswerte.png)</kbd>
+
+### **Haltedauer**
+
+Die Haltedauer bestimmt die Zeit, die der Sensor im EIN-Zustand verbleibt, auch wenn der gemessene Reflexionswert unter die Halten-Schwelle gesunken ist. Wird während der Haltedauer der Halten-Schwellwert erneut überschritten, startet beim nächsten Unterschreiten die Haltedauer erneut.
+
+### **Entfernung**
+
+Die Entfernung gibt dem Sensor den Bereich an, in dem er Präsenz erkennen soll. Außerhalb dieses Bereiches finden keine Messungen statt. Allerdings sollte man bedenken, dass Messwerte schwanken können und die Messung von Reflexionen nicht ganz exakt sein kann. Deswegen kann auch ein Objekt, dass knapp außerhalb des zu messenden Bereichs ist, eventuell doch noch erfasst werden.
+
+### **Schwellwerte**
+
+Die Schwellwert-Tabelle gibt die Entfernungsgrenzen der Ranges an und erlaubt in den Spalten dazwischen die Eingabe der entsprechenden Hysterese-Schwellwerte. Die Zahlen geben die jeweiligen Grenzen der Ranges an. Die Checkboxen zwischen den Zahlen erlauben es, eine ganze Spalte zu deaktivieren und so die Messung in dem Range zu verhindern.
+
+### **Trigger**
+
+Trigger ist der Wert, der in einem Range überschritten werden muss, damit der Sensor von einem AUS-Zustand in den EIN-Zustand wechselt. Ein Trigger sollte etwa 500 über dem maximalen gemessenen Reflexionswert einer Stichprobe liegen.
+
+### **Halten**
+
+Halten ist der Wert, der in einem Range für die Dauer der Haltezeit unterschritten werden muss, damit der Sensor von einem EIN-Zustand in den AUS-Zustand wechselt. Halten sollte nur in Ausnahmefällen niedriger sein als der Durchschnittswert der gemessenen Stichprobe.
+
+### **Testen**
+
+Die Sensoreinstellungen können mit dem Präsenzmelder direkt getestet werden, ohne eine vollständige Programmierung machen zu müssen. Dazu gibt es dem Button
+
+<kbd>![Testen](pics/HLK-Testen.png)</kbd>
+
+Nach dem Drücken werden nur die Sensordaten an das Gerät übertragen und nach einer Totzeit von ca. 5 Sekunden läuft der Sensor mit den neuen Einstellungen. Das Gerät wird nicht neu gestartet. Man kann dann feststellen, ob die Präsenzerkennung zufriedenstellend ist und erneut testen.
+
+>Wichtig: Die Testwerte bleiben im Sensor nur bis zum nächsten Neustart des Gerätes. Will man die Testwerte behalten, muss man das Gerät normal mit der ETS programmieren. Dadurch werden die Werte persistiert und bleiben erhalten.
+
+
+## **Arbeitshilfen für die Sensoreinstellung**
+
+Werte einzustellen, ohne dass man einen Bezug dazu hat und die einem nichts sagen, ist besonders schwer. Um eine gewisse Einschätzung zu erlauben, gibt es auf der HLK-Konfigurationsseite weitere Bereiche, die es Erlauben, die Werte besser zu beurteilen und so eine Einstellung ermöglichen.
+
+### **Stichprobe**
+
+Es gibt 2 Bereiche "Stichprobe", die gleich funktionieren. Es wird nur ein Bereich beschrieben.
+
+<kbd>![Stichprobe](pics/HLK-Stichprobe.png)</kbd>
+
+Mit einer Stichprobe kann man vom Sensor das Grundrauschen in einem Raum ermitteln lassen. Die Stichprobe dauert ca. 30 Sekunden und kann auf 3 verschiedene Arten ermittelt werden:
+
+1. Durch das Senden einer 1 an das KO 27 (HF-Stichprobe nehmen) und - nach ca. 30 Sekunden - betätigen des Buttons "Bestehende lesen".
+2. Durch das Betätigen des Buttons "Ermitteln (sofort)". Die Ergebnisse werden nach ca. 30 Sekunden dargestellt.
+3. Durch das Betätigen des Buttons "Ermitteln (in 30s)". Daraufhin warten die ETS erstmal 30 Sekunden, bevor die Stichprobenermittlung wie bei Punkt 2 startet. Dieser Modus ist dafür gedacht, dass man die Stichprobenermittlung mit der ETS starten kann und dann noch Zeit hat, den Raum zu verlassen.
+
+In allen 3 Fällen sieht man in der ETS die gemessenen Reflexionswerte pro Range, für alle Ranges, die durch die Angabe der Entfernung berücksichtigt werden sollen. Es werden für jeden Range die folgenden Werte ermittelt.
+
+#### **Maximum**
+
+Das Maximum aller während der Stichprobe gemessenen Reflexionswerte für jeden Range.
+
+#### **Standardabweichung**
+
+Die Standardabweichung aller während der Stichprobe gemessenen Reflexionswerte für jeden Range. Genau genommen wird hier immer der Durchschnitt + Standardabweichung ausgegeben, die Standardabweichung ist somit die Differenz zwischen dem Feldinhalt und dem Durchschnitt. Diese Form der Ausgabe erlaubt eine einfachere Weiterverarbeitung.
+
+#### **Durchschnitt**
+
+Der Durchschnitt aller während der Stichprobe gemessenen Reflexionswerte für jeden Range.
+
+### **Hilfsfunktionen**
+
+Erscheint nur, wenn das Auswahlfeld Anzeige am Seitenanfang auf "Mit Hilfsfunktionen" oder auf "Alles" steht.
+
+Der Bereich Hilfsfunktionen erlaubt die Berechnung von Sensoreinstellungen für Trigger und Halten anhand der ermittelten Stichproben. 
+
+<kbd>![Hilfsfunktionen](pics/HLK-Hilfsfunktionen.png)</kbd>
+
+Dabei gibt es 2 Funktionskategorien: Kopieren und Berechnen (Differenzbildung).
+
+#### **Kopiere**
+
+Die Kopierfunktion erlaubt es, Werte von verschiedenen Quellen nach Trigger, Halten oder beidem (Trigger und Halten) zu kopieren.
+
+<kbd>![Kopierziel](pics/HLK-Kopierziel.png)</kbd>
+
+Als Kopier-Quelle stehen folgende Möglichkeiten zur Verfügung:
+
+<kbd>![Kopierquelle](pics/HLK-Kopierquelle.png)</kbd>
+
+* **Herstellerwerte** - Kopiert die Hersteller-Voreinstellung der Sensorwerte in das eingestellte Ziel
+* **konstanten Wert** - Kopiert einen konstanten (eingebbaren) Wert in das eingestellte Ziel
+* **frühere Kalibrierung mit Empfindlichkeit** - Kopiert die Werte, die die bisherige Kalibrierungsfunktion passend zur Empfindlichkeit ermittelt hat, in das eingestellte Ziel. Dabei kann die Empfindlichkeit angegeben werden. Dies ist für all diejenigen gedacht, die mit der bisherigen Firmware gute Ergebnisse erzielt haben und keine weiteren Einstellungen vornehmen wollen.
+* **Stichprobe 1: Maximalwert + Offset** - Kopiert die ermittelten Werte für den Maximalwert der Stichprobe 1 zuzüglich eines eingebbaren Offsets in das eingestellte Ziel. Hier ist meist nur Trigger ein sinnvolles Ziel. Eignet sich z.B. um initial Stichprobe + 500 in alle Trigger zu übertragen.
+* **Stichprobe 1: Standardabweichung + Offset** - Kopiert die ermittelten Werte für die Standardabweichung der Stichprobe 1 zuzüglich eines eingebbaren Offsets in das eingestellte Ziel. Hier ist meist nur Halten ein sinnvolles Ziel. Sollten die Durchschnittswerte dazu führen, dass der Sensor eine Dauerpräsenz erkennt, ist die Standardabweichung ein guter höherer Wert für passable Ergebnisse.
+* **Stichprobe 1: Durchschnitt + Offset** - Kopiert die ermittelten Werte für den Durchschnitt der Stichprobe 1 zuzüglich eines eingebbaren Offsets in das eingestellte Ziel. Hier ist meist nur Halten ein sinnvolles Ziel. Eignet sich z.B. um initial Durchschnitt + 0 in alle Halten zu übertragen.
+* **Stichprobe 2: xxxx** - analog zu den Stichprobe 1-Funktionen
+* **Differenz + Offset** - Kopiert die berechneten Differenzwerte zuzüglich eines eingebbaren Offsets in das eingestellte Ziel. Das spart das manuelle Übertragen von berechneten Werten in die jeweiligen Ranges.
+
+#### **Empfindlichkeit**
+
+Bei der Kopierfunktion "frühere Kalibrierung mit Empfindlichkeit" kann man hier die Empfindlichkeit in % angeben. Es sind nur durch 10 teilbare Werte zugelassen.
+
+#### **Offset**
+
+Bei allen Kopierfunktionen mit Offset kann man hier den Offset (positiv oder negativ) angeben, der vor dem Kopieren zum Wert addiert werden soll.
+
+#### **Berechne**
+
+Die Berechnungsfunktion erlaubt die Differenzbildung zwischen den gelieferten Ergebnissen, um so die Reflexionswerte einfach vergleichen zu können.
+
+Sowohl als Quelle wie auch als Ziel sind folgende Werte möglich:
+
+<kbd>![Berechne](pics/HLK-Differenz.png)</kbd>
+
+* **Trigger** - Es werden die Werte von Trigger genommen
+* **Halten** - Es werden die Werte von Halten genommen
+* **Stichprobe 1: Maximum** - Es werden die Werte vom Maximum der Stichprobe genommen
+* **Stichprobe 1: Standardabweichung** - Es werden die Werte von der Standardabweichung der Stichprobe genommen
+* **Stichprobe 1: Durchschnitt** - Es werden die Werte vom Durchschnitt der Stichprobe  genommen
+* **Stichprobe 2: Maximum** - Es werden die Werte vom Maximum der Stichprobe genommen
+* **Stichprobe 2: Standardabweichung** - Es werden die Werte von der Standardabweichung der Stichprobe genommen
+* **Stichprobe 2: Durchschnitt** - Es werden die Werte vom Durchschnitt der Stichprobe  genommen
+
+#### **Differenz**
+
+Hier werden die Ergebnisse (Differenz) der Berechnung angezeigt.
+
+### **Speicher**
+
+Erscheint nur, wenn das Auswahlfeld Anzeige am Seitenanfang auf "Mit Speicher" oder auf "Alles" steht.
+
+Der Bereich Speicher erlaubt es, die gerade eingestellten Werte für Trigger und Halten zwischenzuspeichern und später wiederzuverwenden. Hat man z.B. gute Werte gefunden, die man nicht verlieren möchte, kann man diese in einem von 2 Speichern zwischenspeichern, einige Versuche mit neuen Einstellungen machen (um z.B. die Erkennung von Präsenz bei stillem Sitzen zu verbessern) und kann sich hinterher entscheiden, ob man die neu gefundenen Einstellungen nicht wieder verwirft und mit den Einstellungen aus dem Speicher überschreibt.
+
+<kbd>![Speicher](pics/HLK-Speicher.png)</kbd>
+
+Es gibt 2 gleichwertige Speicher, es wir nur eine beschrieben. Der 2. verhält sich analog.
+
+#### **Name** 
+
+Hier kann der Speicher benannt werden, damit man sich später erinnern kann, was in diesem Speicher gespeichert wurde.
+
+#### **Trigger**
+
+Die Spalte Trigger hat 2 Buttons mit Piktogrammen, die folgende Funktionen auslösen:
+
+* **Disketten-Piktogramm** - Speichert alle Werte vom Trigger in den Trigger-Speicher.
+* **Aktenmappen-Piktogramm** - Kopiert alle Werte vom Trigger-Speicher nach Trigger.
+
+Die Spalte Halten hat 2 Buttons mit Piktogrammen, die folgende Funktionen auslösen:
+
+* **Disketten-Piktogramm** - Speichert alle Werte von Halten in den Halten-Speicher.
+* **Aktenmappen-Piktogramm** - Kopiert alle Werte vom Halten-Speicher nach Halten.
+
+Für jeden Speicher gibt es auch noch
+
+* **Mülleimer-Piktogramm** - Löscht den Trigger- und den Halten-Speicher.
+
 
 ## Grundsätzliche Funktion eines Präsenzkanals
 
