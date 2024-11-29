@@ -14,22 +14,22 @@
           <Static>
             <Parameters>
               <!-- HLK-HF-Sensor management (extended steup page) -->
-              <Parameter Id="%AID%_P-%TT%99%PPP+00%" Name="%RowName%00" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 00" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+01%" Name="%RowName%01" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 01" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+02%" Name="%RowName%02" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 02" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+03%" Name="%RowName%03" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 03" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+04%" Name="%RowName%04" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 04" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+05%" Name="%RowName%05" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 05" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+06%" Name="%RowName%06" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 06" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+07%" Name="%RowName%07" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 07" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+08%" Name="%RowName%08" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 08" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+09%" Name="%RowName%09" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 09" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+10%" Name="%RowName%10" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 10" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+11%" Name="%RowName%11" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 11" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+12%" Name="%RowName%12" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 12" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+13%" Name="%RowName%13" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 13" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+14%" Name="%RowName%14" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 14" Value="0" Access="Read" />
-              <Parameter Id="%AID%_P-%TT%99%PPP+15%" Name="%RowName%15" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText% 15" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+00%" Name="%RowName%00" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+01%" Name="%RowName%01" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+02%" Name="%RowName%02" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+03%" Name="%RowName%03" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+04%" Name="%RowName%04" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+05%" Name="%RowName%05" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+06%" Name="%RowName%06" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+07%" Name="%RowName%07" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+08%" Name="%RowName%08" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+09%" Name="%RowName%09" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+10%" Name="%RowName%10" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+11%" Name="%RowName%11" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+12%" Name="%RowName%12" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+13%" Name="%RowName%13" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+14%" Name="%RowName%14" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
+              <Parameter Id="%AID%_P-%TT%99%PPP+15%" Name="%RowName%15" ParameterType="%AID%_PT-dBValueDelta" Text="%RowText%" Value="0" Access="Read" />
             </Parameters>
             <ParameterRefs>
               <ParameterRef Id="%AID%_P-%TT%99%PPP+00%_R-%TT%99%PPP+00%01" RefId="%AID%_P-%TT%99%PPP+00%" />
@@ -83,13 +83,13 @@
                 <!-- Range 0 -->
                 <choose ParamRefId="%AID%_UP-%TT%00018_R-%TT%0001801">
                   <when test="0">
-                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+00%_R-%TT%99%PPP+00%01" Cell="1,2" />
+                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+00%_R-%TT%99%PPP+00%01" Cell="1,2" HelpContext="%DOC%" />
                   </when>
                 </choose>
                 <!-- Range 1 -->
                 <choose ParamRefId="%AID%_UP-%TT%00018_R-%TT%0001801">
                   <when test="&lt;=1">
-                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+01%_R-%TT%99%PPP+01%01" Cell="1,3" />
+                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+01%_R-%TT%99%PPP+01%01" Cell="1,3" HelpContext="%DOC%" />
                   </when>
                 </choose>
                 <!-- Range 2 -->
@@ -97,7 +97,7 @@
                   <when test="&lt;=2">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;1">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+02%_R-%TT%99%PPP+02%01" Cell="1,4" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+02%_R-%TT%99%PPP+02%01" Cell="1,4" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -107,7 +107,7 @@
                   <when test="&lt;=3">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;2">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+03%_R-%TT%99%PPP+03%01" Cell="1,5" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+03%_R-%TT%99%PPP+03%01" Cell="1,5" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -117,7 +117,7 @@
                   <when test="&lt;=4">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;3">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+04%_R-%TT%99%PPP+04%01" Cell="1,6" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+04%_R-%TT%99%PPP+04%01" Cell="1,6" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -127,7 +127,7 @@
                   <when test="&lt;=5">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;4">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+05%_R-%TT%99%PPP+05%01" Cell="1,7" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+05%_R-%TT%99%PPP+05%01" Cell="1,7" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -137,7 +137,7 @@
                   <when test="&lt;=6">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;5">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+06%_R-%TT%99%PPP+06%01" Cell="1,8" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+06%_R-%TT%99%PPP+06%01" Cell="1,8" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -147,7 +147,7 @@
                   <when test="&lt;=7">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;6">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+07%_R-%TT%99%PPP+07%01" Cell="1,9" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+07%_R-%TT%99%PPP+07%01" Cell="1,9" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -157,7 +157,7 @@
                   <when test="&lt;=8">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;7">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+08%_R-%TT%99%PPP+08%01" Cell="1,10" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+08%_R-%TT%99%PPP+08%01" Cell="1,10" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -167,7 +167,7 @@
                   <when test="&lt;=9">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;8">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+09%_R-%TT%99%PPP+09%01" Cell="1,11" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+09%_R-%TT%99%PPP+09%01" Cell="1,11" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -177,7 +177,7 @@
                   <when test="&lt;=10">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;9">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+10%_R-%TT%99%PPP+10%01" Cell="1,12" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+10%_R-%TT%99%PPP+10%01" Cell="1,12" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -187,7 +187,7 @@
                   <when test="&lt;=11">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;10">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+11%_R-%TT%99%PPP+11%01" Cell="1,13" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+11%_R-%TT%99%PPP+11%01" Cell="1,13" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -197,7 +197,7 @@
                   <when test="&lt;=12">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;11">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+12%_R-%TT%99%PPP+12%01" Cell="1,14" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+12%_R-%TT%99%PPP+12%01" Cell="1,14" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -207,7 +207,7 @@
                   <when test="&lt;=13">
                     <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                       <when test="&gt;12">
-                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+13%_R-%TT%99%PPP+13%01" Cell="1,15" />
+                        <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+13%_R-%TT%99%PPP+13%01" Cell="1,15" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -215,13 +215,13 @@
                 <!-- Range 14 -->
                 <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                   <when test="&gt;13">
-                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+14%_R-%TT%99%PPP+14%01" Cell="1,16" />
+                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+14%_R-%TT%99%PPP+14%01" Cell="1,16" HelpContext="%DOC%" />
                   </when>
                 </choose>
                 <!-- Range 15 -->
                 <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                   <when test="&gt;14">
-                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+15%_R-%TT%99%PPP+15%01" Cell="1,17" />
+                    <ParameterRefRef RefId="%AID%_P-%TT%99%PPP+15%_R-%TT%99%PPP+15%01" Cell="1,17" HelpContext="%DOC%" />
                   </when>
                 </choose>
               </ParameterBlock>

@@ -22,7 +22,7 @@ Diese Auswahlbox unterstützt einige klassische Konstellationen:
 
 Ein Melder, dessen Nachlaufzeit sich nicht unter 30 Sekunden stellen lässt, sollte als **Präsenz** eingebunden werden.
 
-Melder, die kurze Nachlaufzeiten kleiner 30 Sekunden erlauben, sei es dass es Präsenzmelder oder Bewegungsmelder sind oder klassische über einen Binäreingang eingebundene Melder, sollten mit **Bewegung** eingebunden werden. Gute Erfahrungen wurden mich einer Nachlaufzeit von 7 Sekunden gemacht.
+Melder, die kurze Nachlaufzeiten kleiner 30 Sekunden erlauben, sei es dass es Präsenzmelder oder Bewegungsmelder sind oder klassische über einen Binäreingang eingebundene Melder, sollten mit **Bewegung** eingebunden werden. Gute Erfahrungen wurden mit einer Nachlaufzeit von 7 Sekunden gemacht.
 
 Melder, die eine an sich gute Präsenzerkennung bieten aber auch kurze Nachlaufzeiten, sollten mit 2 Kanälen also **Präsenz und Bewegung** eingebunden werden, wobei der Präsenzkanal etwa 30 Sekunden und der Bewegungskanal 5 bis 7 Sekunden Nachlaufzeit haben sollte.
 

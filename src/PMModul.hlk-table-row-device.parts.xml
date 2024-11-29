@@ -34,22 +34,22 @@
               <!-- HLK-HF-Sensor management (extended steup page) -->
               <Union SizeInBit="256">
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="%ParamOffset%" BitOffset="0" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+00%" Name="%RowName%00" ParameterType="%AID%_PT-dBValue" Offset="0"  BitOffset="0" Text="%RowText% 00" Value="%Default00%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+01%" Name="%RowName%01" ParameterType="%AID%_PT-dBValue" Offset="2"  BitOffset="0" Text="%RowText% 01" Value="%Default01%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+02%" Name="%RowName%02" ParameterType="%AID%_PT-dBValue" Offset="4"  BitOffset="0" Text="%RowText% 02" Value="%Default02%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+03%" Name="%RowName%03" ParameterType="%AID%_PT-dBValue" Offset="6"  BitOffset="0" Text="%RowText% 03" Value="%Default03%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+04%" Name="%RowName%04" ParameterType="%AID%_PT-dBValue" Offset="8"  BitOffset="0" Text="%RowText% 04" Value="%Default04%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+05%" Name="%RowName%05" ParameterType="%AID%_PT-dBValue" Offset="10" BitOffset="0" Text="%RowText% 05" Value="%Default05%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+06%" Name="%RowName%06" ParameterType="%AID%_PT-dBValue" Offset="12" BitOffset="0" Text="%RowText% 06" Value="%Default06%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+07%" Name="%RowName%07" ParameterType="%AID%_PT-dBValue" Offset="14" BitOffset="0" Text="%RowText% 07" Value="%Default07%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+08%" Name="%RowName%08" ParameterType="%AID%_PT-dBValue" Offset="16" BitOffset="0" Text="%RowText% 08" Value="%Default08%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+09%" Name="%RowName%09" ParameterType="%AID%_PT-dBValue" Offset="18" BitOffset="0" Text="%RowText% 09" Value="%Default09%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+10%" Name="%RowName%10" ParameterType="%AID%_PT-dBValue" Offset="20" BitOffset="0" Text="%RowText% 10" Value="%Default10%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+11%" Name="%RowName%11" ParameterType="%AID%_PT-dBValue" Offset="22" BitOffset="0" Text="%RowText% 11" Value="%Default11%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+12%" Name="%RowName%12" ParameterType="%AID%_PT-dBValue" Offset="24" BitOffset="0" Text="%RowText% 12" Value="%Default12%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+13%" Name="%RowName%13" ParameterType="%AID%_PT-dBValue" Offset="26" BitOffset="0" Text="%RowText% 13" Value="%Default13%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+14%" Name="%RowName%14" ParameterType="%AID%_PT-dBValue" Offset="28" BitOffset="0" Text="%RowText% 14" Value="%Default14%" Access="%Access%" />
-                <Parameter Id="%AID%_UP-%TT%99%PPP+15%" Name="%RowName%15" ParameterType="%AID%_PT-dBValue" Offset="30" BitOffset="0" Text="%RowText% 15" Value="%Default15%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+00%" Name="%RowName%00" ParameterType="%AID%_PT-dBValue" Offset="0"  BitOffset="0" Text="%RowText%" Value="%Default00%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+01%" Name="%RowName%01" ParameterType="%AID%_PT-dBValue" Offset="2"  BitOffset="0" Text="%RowText%" Value="%Default01%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+02%" Name="%RowName%02" ParameterType="%AID%_PT-dBValue" Offset="4"  BitOffset="0" Text="%RowText%" Value="%Default02%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+03%" Name="%RowName%03" ParameterType="%AID%_PT-dBValue" Offset="6"  BitOffset="0" Text="%RowText%" Value="%Default03%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+04%" Name="%RowName%04" ParameterType="%AID%_PT-dBValue" Offset="8"  BitOffset="0" Text="%RowText%" Value="%Default04%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+05%" Name="%RowName%05" ParameterType="%AID%_PT-dBValue" Offset="10" BitOffset="0" Text="%RowText%" Value="%Default05%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+06%" Name="%RowName%06" ParameterType="%AID%_PT-dBValue" Offset="12" BitOffset="0" Text="%RowText%" Value="%Default06%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+07%" Name="%RowName%07" ParameterType="%AID%_PT-dBValue" Offset="14" BitOffset="0" Text="%RowText%" Value="%Default07%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+08%" Name="%RowName%08" ParameterType="%AID%_PT-dBValue" Offset="16" BitOffset="0" Text="%RowText%" Value="%Default08%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+09%" Name="%RowName%09" ParameterType="%AID%_PT-dBValue" Offset="18" BitOffset="0" Text="%RowText%" Value="%Default09%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+10%" Name="%RowName%10" ParameterType="%AID%_PT-dBValue" Offset="20" BitOffset="0" Text="%RowText%" Value="%Default10%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+11%" Name="%RowName%11" ParameterType="%AID%_PT-dBValue" Offset="22" BitOffset="0" Text="%RowText%" Value="%Default11%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+12%" Name="%RowName%12" ParameterType="%AID%_PT-dBValue" Offset="24" BitOffset="0" Text="%RowText%" Value="%Default12%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+13%" Name="%RowName%13" ParameterType="%AID%_PT-dBValue" Offset="26" BitOffset="0" Text="%RowText%" Value="%Default13%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+14%" Name="%RowName%14" ParameterType="%AID%_PT-dBValue" Offset="28" BitOffset="0" Text="%RowText%" Value="%Default14%" Access="%Access%" />
+                <Parameter Id="%AID%_UP-%TT%99%PPP+15%" Name="%RowName%15" ParameterType="%AID%_PT-dBValue" Offset="30" BitOffset="0" Text="%RowText%" Value="%Default15%" Access="%Access%" />
               </Union>
             </Parameters>
             <ParameterRefs>
@@ -167,7 +167,7 @@
                         <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+00%_R-%TT%99%PPP+00%02" Cell="1,2" />
                       </when>
                       <when test="1">
-                        <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+00%_R-%TT%99%PPP+00%01" Cell="1,2" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+00%_R-%TT%99%PPP+00%01" Cell="1,2" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -178,7 +178,7 @@
                         <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+01%_R-%TT%99%PPP+01%02" Cell="1,3" />
                       </when>
                       <when test="1">
-                        <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+01%_R-%TT%99%PPP+01%01" Cell="1,3" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+01%_R-%TT%99%PPP+01%01" Cell="1,3" HelpContext="%DOC%" />
                       </when>
                     </choose>
                   </when>
@@ -191,7 +191,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+02%_R-%TT%99%PPP+02%02" Cell="1,4" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+02%_R-%TT%99%PPP+02%01" Cell="1,4" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+02%_R-%TT%99%PPP+02%01" Cell="1,4" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -206,7 +206,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+03%_R-%TT%99%PPP+03%02" Cell="1,5" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+03%_R-%TT%99%PPP+03%01" Cell="1,5" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+03%_R-%TT%99%PPP+03%01" Cell="1,5" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -221,7 +221,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+04%_R-%TT%99%PPP+04%02" Cell="1,6" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+04%_R-%TT%99%PPP+04%01" Cell="1,6" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+04%_R-%TT%99%PPP+04%01" Cell="1,6" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -236,7 +236,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+05%_R-%TT%99%PPP+05%02" Cell="1,7" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+05%_R-%TT%99%PPP+05%01" Cell="1,7" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+05%_R-%TT%99%PPP+05%01" Cell="1,7" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -251,7 +251,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+06%_R-%TT%99%PPP+06%02" Cell="1,8" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+06%_R-%TT%99%PPP+06%01" Cell="1,8" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+06%_R-%TT%99%PPP+06%01" Cell="1,8" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -266,7 +266,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+07%_R-%TT%99%PPP+07%02" Cell="1,9" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+07%_R-%TT%99%PPP+07%01" Cell="1,9" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+07%_R-%TT%99%PPP+07%01" Cell="1,9" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -281,7 +281,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+08%_R-%TT%99%PPP+08%02" Cell="1,10" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+08%_R-%TT%99%PPP+08%01" Cell="1,10" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+08%_R-%TT%99%PPP+08%01" Cell="1,10" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -296,7 +296,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+09%_R-%TT%99%PPP+09%02" Cell="1,11" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+09%_R-%TT%99%PPP+09%01" Cell="1,11" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+09%_R-%TT%99%PPP+09%01" Cell="1,11" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -311,7 +311,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+10%_R-%TT%99%PPP+10%02" Cell="1,12" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+10%_R-%TT%99%PPP+10%01" Cell="1,12" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+10%_R-%TT%99%PPP+10%01" Cell="1,12" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -326,7 +326,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+11%_R-%TT%99%PPP+11%02" Cell="1,13" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+11%_R-%TT%99%PPP+11%01" Cell="1,13" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+11%_R-%TT%99%PPP+11%01" Cell="1,13" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -341,7 +341,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+12%_R-%TT%99%PPP+12%02" Cell="1,14" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+12%_R-%TT%99%PPP+12%01" Cell="1,14" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+12%_R-%TT%99%PPP+12%01" Cell="1,14" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>
@@ -356,7 +356,7 @@
                             <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+13%_R-%TT%99%PPP+13%02" Cell="1,15" />
                           </when>
                           <when test="1">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+13%_R-%TT%99%PPP+13%01" Cell="1,15" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%99%PPP+13%_R-%TT%99%PPP+13%01" Cell="1,15" HelpContext="%DOC%" />
                           </when>
                         </choose>
                       </when>

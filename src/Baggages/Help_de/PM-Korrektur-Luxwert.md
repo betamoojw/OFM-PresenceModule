@@ -1,5 +1,7 @@
 ﻿### Korrektur Luxwert
 
+Erscheint nur, wenn ein Hardware-Helligkeitssensor ausgewählt ist.
+
 Der vom Helligkeitssensor gemessene Luxwert kann hier korrigiert werden. Der auf den Bus gesendete Luxwert wird um den hier eingestellten Wert erhöht.
 
 Wird 10 Lux eingestellt und 20 Lux gemessen, wird auf den Bus 30 Lux gesendet.

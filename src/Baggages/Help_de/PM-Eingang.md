@@ -12,7 +12,7 @@ Der externe Sensor liefert das Signal als schaltendes Objekt. Solange ein EIN-Si
 
 Der externe Sensor liefert das Signal als Trigger. Sobald ein EIN-Signal anliegt, ist Präsenz vorhanden und die Nachlaufzeit läuft an. Ein erneutes EIN setzt die Nachlaufzeit zurück, d.h. sie läuft erneut an. Ein AUS-Signal wird ignoriert.
 
-Der externe Sensor muss sicherstellen, dass er valide Signale häufiger sendet als die minimale Nachlaufzeit, die verwendet wird. Empfohlen wird ein zyklisches senden, mindestens doppelt so häufig wie die geringste verwendete Nachlaufzeit (Da die Nachlaufzeit tagesphasenabhängig ist und die Kurzzeitpräsenz auch eine Nachlaufzeit hat, muss die kürzeste Nachlaufzeit berücksichtigt werden).
+Der externe Sensor muss sicherstellen, dass er valide Signale häufiger sendet als die minimale Nachlaufzeit, die verwendet wird. Empfohlen wird ein zyklisches senden, mindestens doppelt so häufig wie die geringste verwendete Nachlaufzeit (da die Nachlaufzeit abhängig von der Tagesphase ist und die Kurzzeitpräsenz auch eine Nachlaufzeit hat, muss die kürzeste Nachlaufzeit berücksichtigt werden).
 
 > Achtung: Aus technischen Gründen wird bei triggerndem Betrieb das Eingangs-KO nach dem Empfangen einer 1 sofort wieder auf 0 gesetzt. Da dies ein Eingang ist, hat das üblicherweise keinerlei Auswirkungen. 
 

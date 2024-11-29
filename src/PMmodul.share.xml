@@ -787,7 +787,7 @@
               <!-- **************************************************** -->
               <choose ParamRefId="%AID%_UP-%TT%00006_R-%TT%0000601">
                 <when test="3">
-                  <ParameterBlock Id="%AID%_PB-nnn" Name="ExtendedParameters" Text="HF-Sensor" Icon="radar">
+                  <ParameterBlock Id="%AID%_PB-nnn" Name="ExtendedParameters" Text="HF-Sensor" Icon="radar" HelpContext="PM-Informationen-zum-Sensor">
                     <!-- Current view setting -->
                     <ParameterBlock Id="%AID%_PB-nnn" Inline="true" Layout="Grid">
                       <Rows>
@@ -800,7 +800,7 @@
                       </Columns>
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="HF-Sensor Konfiguration" Cell="1,1" UIHint="Headline" />
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="Anzeige" Cell="1,2" />
-                      <ParameterRefRef RefId="%AID%_P-%TT%99926_R-%TT%9992601" Cell="1,3" />
+                      <ParameterRefRef RefId="%AID%_P-%TT%99926_R-%TT%9992601" Cell="1,3" HelpContext="%DOC%" />
                     </ParameterBlock>
 
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="In diesem Bereich können detaillierte Einstellungen für den HF-Sensor vorgenommen und direkt ausprobiert werden. Um aber die Eingaben dauerhaft im Sensor zu speichern, muss der Sensor über die ETS programmiert werden." />
@@ -850,11 +850,11 @@
                         <Column Id="%AID%_PB-nnn_C-4" Width="22%" />
                       </Columns>
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="Haltedauer" Cell="1,1" />
-                      <ParameterRefRef RefId="%AID%_UP-%TT%00017_R-%TT%0001701" Cell="1,2" />
+                      <ParameterRefRef RefId="%AID%_UP-%TT%00017_R-%TT%0001701" Cell="1,2" HelpContext="%DOC%" />
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="Entfernung" Cell="2,1" />
-                      <ParameterRefRef RefId="%AID%_UP-%TT%00018_R-%TT%0001801" Cell="2,2" />
+                      <ParameterRefRef RefId="%AID%_UP-%TT%00018_R-%TT%0001801" Cell="2,2" HelpContext="PM-Entfernung" />
                       <ParameterSeparator Id="%AID%_PS-nnn" Text="  bis" Cell="2,3" />
-                      <ParameterRefRef RefId="%AID%_UP-%TT%00019_R-%TT%0001901" Cell="2,4" />
+                      <ParameterRefRef RefId="%AID%_UP-%TT%00019_R-%TT%0001901" Cell="2,4" HelpContext="PM-Entfernung" />
                     </ParameterBlock>
 
                     <!-- Editor section -->
@@ -904,22 +904,19 @@
                         <when test="0">
                           <!-- Range 0 -->
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="0" Cell="1,2" UIHint="Headline" />
-                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,3" UIHint="Headline" /> -->
-                          <ParameterRefRef RefId="%AID%_P-%TT%99930_R-%TT%9993001" Cell="1,3" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99930_R-%TT%9993001" Cell="1,3" HelpContext="PM-Spalte-aktiv" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="0.35" Cell="1,4" UIHint="Headline" />
                         </when>
                         <when test="&lt;=1">
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="0.35" Cell="1,4" UIHint="Headline" />
-                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,5" UIHint="Headline" /> -->
-                          <ParameterRefRef RefId="%AID%_P-%TT%99931_R-%TT%9993101" Cell="1,5" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99931_R-%TT%9993101" Cell="1,5" HelpContext="PM-Spalte-aktiv" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="1.05" Cell="1,6" UIHint="Headline" />
                         </when>
                         <when test="&lt;=2">
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;1">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="1.05" Cell="1,6" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,7" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99932_R-%TT%9993201" Cell="1,7" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99932_R-%TT%9993201" Cell="1,7" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="1.75" Cell="1,8" UIHint="Headline" />
                             </when>
                           </choose>
@@ -928,8 +925,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;2">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="1.75" Cell="1,8" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,9" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99933_R-%TT%9993301" Cell="1,9" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99933_R-%TT%9993301" Cell="1,9" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="2.45" Cell="1,10" UIHint="Headline" />
                             </when>
                           </choose>
@@ -938,8 +934,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;3">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="2.45" Cell="1,10" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,11" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99934_R-%TT%9993401" Cell="1,11" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99934_R-%TT%9993401" Cell="1,11" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="3.15" Cell="1,12" UIHint="Headline" />
                             </when>
                           </choose>
@@ -948,8 +943,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;4">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="3.15" Cell="1,12" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,13" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99935_R-%TT%9993501" Cell="1,13" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99935_R-%TT%9993501" Cell="1,13" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="3.85" Cell="1,14" UIHint="Headline" />
                             </when>
                           </choose>
@@ -958,8 +952,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;5">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="3.85" Cell="1,14" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,15" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99936_R-%TT%9993601" Cell="1,15" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99936_R-%TT%9993601" Cell="1,15" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="4.55" Cell="1,16" UIHint="Headline" />
                             </when>
                           </choose>
@@ -968,8 +961,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;6">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="4.55" Cell="1,16" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,17" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99937_R-%TT%9993701" Cell="1,17" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99937_R-%TT%9993701" Cell="1,17" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="5.25" Cell="1,18" UIHint="Headline" />
                             </when>
                           </choose>
@@ -978,8 +970,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;7">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="5.25" Cell="1,18" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,19" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99938_R-%TT%9993801" Cell="1,19" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99938_R-%TT%9993801" Cell="1,19" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="5.95" Cell="1,20" UIHint="Headline" />
                             </when>
                           </choose>
@@ -988,8 +979,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;8">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="5.95" Cell="1,20" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,21" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99939_R-%TT%9993901" Cell="1,21" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99939_R-%TT%9993901" Cell="1,21" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="6.65" Cell="1,22" UIHint="Headline" />
                             </when>
                           </choose>
@@ -998,8 +988,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;9">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="6.65" Cell="1,22" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,23" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99940_R-%TT%9994001" Cell="1,23" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99940_R-%TT%9994001" Cell="1,23" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="7.35" Cell="1,24" UIHint="Headline" />
                             </when>
                           </choose>
@@ -1008,8 +997,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;10">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="7.35" Cell="1,24" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,25" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99941_R-%TT%9994101" Cell="1,25" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99941_R-%TT%9994101" Cell="1,25" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="8.05" Cell="1,26" UIHint="Headline" />
                             </when>
                           </choose>
@@ -1018,8 +1006,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;11">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="8.05" Cell="1,26" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,27" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99942_R-%TT%9994201" Cell="1,27" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99942_R-%TT%9994201" Cell="1,27" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="8.75" Cell="1,28" UIHint="Headline" />
                             </when>
                           </choose>
@@ -1028,8 +1015,7 @@
                           <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                             <when test="&gt;12">
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="8.75" Cell="1,28" UIHint="Headline" />
-                              <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,29" UIHint="Headline" /> -->
-                              <ParameterRefRef RefId="%AID%_P-%TT%99943_R-%TT%9994301" Cell="1,29" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99943_R-%TT%9994301" Cell="1,29" HelpContext="PM-Spalte-aktiv" />
                               <ParameterSeparator Id="%AID%_PS-nnn" Text="9.45" Cell="1,30" UIHint="Headline" />
                             </when>
                           </choose>
@@ -1038,14 +1024,12 @@
                       <choose ParamRefId="%AID%_UP-%TT%00019_R-%TT%0001901">
                         <when test="&gt;13">
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="9.45" Cell="1,30" UIHint="Headline" />
-                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,31" UIHint="Headline" /> -->
-                          <ParameterRefRef RefId="%AID%_P-%TT%99944_R-%TT%9994401" Cell="1,31" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99944_R-%TT%9994401" Cell="1,31" HelpContext="PM-Spalte-aktiv" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="10.15" Cell="1,32" UIHint="Headline" />
                         </when>
                         <when test="&gt;14">
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="10.15" Cell="1,32" UIHint="Headline" />
-                          <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="- " Cell="1,33" UIHint="Headline" /> -->
-                          <ParameterRefRef RefId="%AID%_P-%TT%99945_R-%TT%9994501" Cell="1,33" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99945_R-%TT%9994501" Cell="1,33" HelpContext="PM-Spalte-aktiv" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="10.85" Cell="1,34" UIHint="Headline" />
                         </when>
                       </choose>
@@ -1084,21 +1068,21 @@
                             <Column Id="%AID%_PB-nnn_C-5" Width="14%" />
                           </Columns>
                           <ParameterSeparator Id="%AID%_PS-nnn" Cell="1,1" Text="Kopiere" />
-                          <ParameterRefRef RefId="%AID%_P-%TT%99920_R-%TT%9992001" Cell="1,2" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99920_R-%TT%9992001" Cell="1,2" HelpContext="PM-Kopierquelle" />
                           <choose ParamRefId="%AID%_P-%TT%99920_R-%TT%9992001">
                             <when test="3">
-                              <ParameterRefRef RefId="%AID%_P-%TT%99922_R-%TT%9992201" Cell="1,3" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99922_R-%TT%9992201" Cell="1,3" HelpContext="%DOC%" />
                             </when>
                             <when test="2 8 9 10 11 12 13 14">
-                              <ParameterRefRef RefId="%AID%_P-%TT%99923_R-%TT%9992301" Cell="1,3" />
+                              <ParameterRefRef RefId="%AID%_P-%TT%99923_R-%TT%9992301" Cell="1,3" HelpContext="%DOC%" />
                             </when>
                           </choose>
-                          <ParameterRefRef RefId="%AID%_P-%TT%99921_R-%TT%9992101" Cell="1,4" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99921_R-%TT%9992101" Cell="1,4" HelpContext="PM-Kopierziel" />
                           <Button Id="%AID%_B-%TT%00004" Text="" Icon="content-copy" Cell="1,5" EventHandler="PM_executeFunction" EventHandlerParameters="{ &quot;dataKind&quot;:8, &quot;parName&quot;:&quot;TriggerDelta&quot; }" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="Berechne" Cell="2,1" />
-                          <ParameterRefRef RefId="%AID%_P-%TT%99924_R-%TT%9992401" Cell="2,2" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99924_R-%TT%9992401" Cell="2,2" HelpContext="PM-Berechne" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="    minus" Cell="2,3" />
-                          <ParameterRefRef RefId="%AID%_P-%TT%99925_R-%TT%9992501" Cell="2,4" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99925_R-%TT%9992501" Cell="2,4" HelpContext="PM-Berechne" />
                           <Button Id="%AID%_B-%TT%00007" Text="" Icon="calculator-variant-outline" Cell="2,5" EventHandler="PM_diffValues" />
                         </ParameterBlock>
                         <op:usePart name="HLK-ROW-REL" xpath="//Dynamic/ChannelIndependentBlock/*" />
@@ -1210,10 +1194,10 @@
                           <!-- <ParameterSeparator Id="%AID%_PS-nnn" Text="Löschen" Cell="1,5" UIHint="Headline" /> -->
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="Speicher 1" Cell="2,1" />
                           <ParameterSeparator Id="%AID%_PS-nnn" Text="Speicher 2" Cell="3,1" />
-                          <ParameterRefRef RefId="%AID%_P-%TT%99900_R-%TT%9990001" Cell="2,2" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99900_R-%TT%9990001" Cell="2,2" HelpContext="PM-Name" />
                           <ParameterRefRef RefId="%AID%_P-%TT%99901_R-%TT%9990101" Cell="2,3" />
                           <ParameterRefRef RefId="%AID%_P-%TT%99902_R-%TT%9990201" Cell="2,4" />
-                          <ParameterRefRef RefId="%AID%_P-%TT%99905_R-%TT%9990501" Cell="3,2" />
+                          <ParameterRefRef RefId="%AID%_P-%TT%99905_R-%TT%9990501" Cell="3,2" HelpContext="PM-Name"/>
                           <ParameterRefRef RefId="%AID%_P-%TT%99906_R-%TT%9990601" Cell="3,3" />
                           <ParameterRefRef RefId="%AID%_P-%TT%99907_R-%TT%9990701" Cell="3,4" />
                           <!-- M1 Trigger -->

@@ -519,10 +519,12 @@ Die Seite ist sehr komplex und deren Einstellungen werden im Folgenden schrittwe
 ### **Allgemeine Informationen**
 
 
+<!-- DOC -->
 #### **Anzeige**
 
 Um den Benutzer nicht gleich mit dem Inhalt zu überfordern, hat die Seite in der oberen rechten Ecke ein Auswahlfeld "Anzeige", mit dem man die angezeigten Bereiche bestimmen kann:
 
+<!-- DOC Skip="1" -->
 <kbd>![Anzeige](pics/HLK-Anzeige.png)</kbd>
 
 * **Kompakt** - es werden nur die notwendigen Bereiche mit Schwellwerten und den beiden Stichproben angezeigt.
@@ -546,13 +548,17 @@ Folgende Indikatoren gibt es in der Applikation, dass diese Initiale Programmier
 
 Durch ein erneutes Programmieren kann das Problem gelöst werden.
 
+<!-- DOC -->
 ### **Informationen zum Sensor**
 
 Die Seite versucht, die möglichen Einstellungen verfügbar zu machen. Um sinnvoll Einstellungen vornehmen und den Sensor an die eigenen Bedürfnisse anpassen zu können, muss man aber dass Messprinzip verstehen.
 
 Der HLK misst in 16 verschiedenen Entfernungsbereichen (vom Hersteller Ranges genannt) um seinen Einbauort "herum". Eine Range ist immer 70 cm. Die folgende Abbildung zeigt die ersten Ranges um den installierten Sensor (in der Bildmitte). Da der innere Range im Durchmesser 70 cm ist (blaue Linen), wir aber immer die Entfernungen vom Sensor zur Person betrachten, wirkt sich der erste Range nur in einer Entfernung von 35 cm aus (grüne Linie), alle folgenden Ranges dann mit 70 cm (braune Linien).
 
+<!-- DOC Skip="3" -->
 <kbd>![HLK-Ranges](pics/HLK-Ringe.png)</kbd>
+
+Auch wenn die Darstellung Ringe als Ranges zeigt (2-Dimensional), muss man das räumlich (3-Dimensional) sehen, da sich HF-Signale Kugelförmig ausbreiten. Somit hat man bei Decken- oder Wandmontage keine Ringe, sondern Halbkugelschalen.
 
 Für jeden dieser Ranges kann man 2 Werte Festlegen, bei denen der Sensor was machen soll: 
  
@@ -576,12 +582,16 @@ Als letzten Punkt muss es noch die Möglichkeit geben, die Ranges abzuschalten, 
 
 Mit den obigen Erklärungen sind die Begriffe auf dem oberen Teil des Einstellungen für den HLK eingeführt. Bei einer neuen Applikation sind die Werte für den Sensor mit den Standardeinstellungen des Herstellers ausgefüllt und können direkt so programmiert werden. Diese Einstellungen können funktionieren, müssen aber nicht.
 
+
+<!-- DOC Skip="1" -->
 <kbd>![HLK-Einstellungen](pics/HLK-Einstellungswerte.png)</kbd>
 
+<!-- DOC -->
 ### **Haltedauer**
 
 Die Haltedauer bestimmt die Zeit, die der Sensor im EIN-Zustand verbleibt, auch wenn der gemessene Reflexionswert unter die Halten-Schwelle gesunken ist. Wird während der Haltedauer der Halten-Schwellwert erneut überschritten, startet beim nächsten Unterschreiten die Haltedauer erneut.
 
+<!-- DOC -->
 ### **Entfernung**
 
 Die Entfernung gibt dem Sensor den Bereich an, in dem er Präsenz erkennen soll. Außerhalb dieses Bereiches finden keine Messungen statt. Allerdings sollte man bedenken, dass Messwerte schwanken können und die Messung von Reflexionen nicht ganz exakt sein kann. Deswegen kann auch ein Objekt, dass knapp außerhalb des zu messenden Bereichs ist, eventuell doch noch erfasst werden.
@@ -590,10 +600,18 @@ Die Entfernung gibt dem Sensor den Bereich an, in dem er Präsenz erkennen soll.
 
 Die Schwellwert-Tabelle gibt die Entfernungsgrenzen der Ranges an und erlaubt in den Spalten dazwischen die Eingabe der entsprechenden Hysterese-Schwellwerte. Die Zahlen geben die jeweiligen Grenzen der Ranges an. Die Checkboxen zwischen den Zahlen erlauben es, eine ganze Spalte zu deaktivieren und so die Messung in dem Range zu verhindern.
 
+<!-- DOC HelpContext="Spalte aktiv" -->
+<!-- DOCCONTENT
+Deaktiviert die ganze Spalte und verhindert die Messung in diesem Range
+DOCCONTENT -->
+<!-- DOCEND -->
+
+<!-- DOC -->
 ### **Trigger**
 
 Trigger ist der Wert, der in einem Range überschritten werden muss, damit der Sensor von einem AUS-Zustand in den EIN-Zustand wechselt. Ein Trigger sollte etwa 500 über dem maximalen gemessenen Reflexionswert einer Stichprobe liegen.
 
+<!-- DOC -->
 ### **Halten**
 
 Halten ist der Wert, der in einem Range für die Dauer der Haltezeit unterschritten werden muss, damit der Sensor von einem EIN-Zustand in den AUS-Zustand wechselt. Halten sollte nur in Ausnahmefällen niedriger sein als der Durchschnittswert der gemessenen Stichprobe.
@@ -627,14 +645,17 @@ Mit einer Stichprobe kann man vom Sensor das Grundrauschen in einem Raum ermitte
 
 In allen 3 Fällen sieht man in der ETS die gemessenen Reflexionswerte pro Range, für alle Ranges, die durch die Angabe der Entfernung berücksichtigt werden sollen. Es werden für jeden Range die folgenden Werte ermittelt.
 
+<!-- DOC -->
 #### **Maximum**
 
 Das Maximum aller während der Stichprobe gemessenen Reflexionswerte für jeden Range.
 
+<!-- DOC -->
 #### **Standardabweichung**
 
 Die Standardabweichung aller während der Stichprobe gemessenen Reflexionswerte für jeden Range. Genau genommen wird hier immer der Durchschnitt + Standardabweichung ausgegeben, die Standardabweichung ist somit die Differenz zwischen dem Feldinhalt und dem Durchschnitt. Diese Form der Ausgabe erlaubt eine einfachere Weiterverarbeitung.
 
+<!-- DOC -->
 #### **Durchschnitt**
 
 Der Durchschnitt aller während der Stichprobe gemessenen Reflexionswerte für jeden Range.
@@ -655,10 +676,18 @@ Die Kopierfunktion erlaubt es, Werte von verschiedenen Quellen nach Trigger, Hal
 
 <kbd>![Kopierziel](pics/HLK-Kopierziel.png)</kbd>
 
+<!-- DOC HelpContext="Kopierziel" -->
+* **nach Trigger** - Kopierziel ist nur Trigger
+* **nach Halten** - Kopierziel ist nur Halten
+* **nach Trigger und Halten** - Kopierziel ist Trigger und Halten
+<!-- DOCEND -->
+
+
 Als Kopier-Quelle stehen folgende Möglichkeiten zur Verfügung:
 
 <kbd>![Kopierquelle](pics/HLK-Kopierquelle.png)</kbd>
 
+<!-- DOC HelpContext="Kopierquelle" -->
 * **Herstellerwerte** - Kopiert die Hersteller-Voreinstellung der Sensorwerte in das eingestellte Ziel
 * **konstanten Wert** - Kopiert einen konstanten (eingebbaren) Wert in das eingestellte Ziel
 * **frühere Kalibrierung mit Empfindlichkeit** - Kopiert die Werte, die die bisherige Kalibrierungsfunktion passend zur Empfindlichkeit ermittelt hat, in das eingestellte Ziel. Dabei kann die Empfindlichkeit angegeben werden. Dies ist für all diejenigen gedacht, die mit der bisherigen Firmware gute Ergebnisse erzielt haben und keine weiteren Einstellungen vornehmen wollen.
@@ -667,11 +696,14 @@ Als Kopier-Quelle stehen folgende Möglichkeiten zur Verfügung:
 * **Stichprobe 1: Durchschnitt + Offset** - Kopiert die ermittelten Werte für den Durchschnitt der Stichprobe 1 zuzüglich eines eingebbaren Offsets in das eingestellte Ziel. Hier ist meist nur Halten ein sinnvolles Ziel. Eignet sich z.B. um initial Durchschnitt + 0 in alle Halten zu übertragen.
 * **Stichprobe 2: xxxx** - analog zu den Stichprobe 1-Funktionen
 * **Differenz + Offset** - Kopiert die berechneten Differenzwerte zuzüglich eines eingebbaren Offsets in das eingestellte Ziel. Das spart das manuelle Übertragen von berechneten Werten in die jeweiligen Ranges.
+<!-- DOCEND -->
 
+<!-- DOC -->
 #### **Empfindlichkeit**
 
 Bei der Kopierfunktion "frühere Kalibrierung mit Empfindlichkeit" kann man hier die Empfindlichkeit in % angeben. Es sind nur durch 10 teilbare Werte zugelassen.
 
+<!-- DOC -->
 #### **Offset**
 
 Bei allen Kopierfunktionen mit Offset kann man hier den Offset (positiv oder negativ) angeben, der vor dem Kopieren zum Wert addiert werden soll.
@@ -684,6 +716,7 @@ Sowohl als Quelle wie auch als Ziel sind folgende Werte möglich:
 
 <kbd>![Berechne](pics/HLK-Differenz.png)</kbd>
 
+<!-- DOC HelpContext="Berechne" -->
 * **Trigger** - Es werden die Werte von Trigger genommen
 * **Halten** - Es werden die Werte von Halten genommen
 * **Stichprobe 1: Maximum** - Es werden die Werte vom Maximum der Stichprobe genommen
@@ -692,7 +725,9 @@ Sowohl als Quelle wie auch als Ziel sind folgende Werte möglich:
 * **Stichprobe 2: Maximum** - Es werden die Werte vom Maximum der Stichprobe genommen
 * **Stichprobe 2: Standardabweichung** - Es werden die Werte von der Standardabweichung der Stichprobe genommen
 * **Stichprobe 2: Durchschnitt** - Es werden die Werte vom Durchschnitt der Stichprobe  genommen
+<!-- DOCEND -->
 
+<!-- DOC -->
 #### **Differenz**
 
 Hier werden die Ergebnisse (Differenz) der Berechnung angezeigt.
@@ -707,6 +742,7 @@ Der Bereich Speicher erlaubt es, die gerade eingestellten Werte für Trigger und
 
 Es gibt 2 gleichwertige Speicher, es wir nur eine beschrieben. Der 2. verhält sich analog.
 
+<!-- DOC -->
 #### **Name** 
 
 Hier kann der Speicher benannt werden, damit man sich später erinnern kann, was in diesem Speicher gespeichert wurde.
@@ -726,6 +762,73 @@ Die Spalte Halten hat 2 Buttons mit Piktogrammen, die folgende Funktionen auslö
 Für jeden Speicher gibt es auch noch
 
 * **Mülleimer-Piktogramm** - Löscht den Trigger- und den Halten-Speicher.
+
+### Vorgehen bei der Kalibrierung des HLK-Sensors
+
+Bisher wurde das Messverfahren und die Einstellmöglichkeiten des HLK-Sensors beschrieben. Im Folgenden werden noch Vorschläge erarbeitet, wie man mit diesen Einstellmöglichkeiten in der Praxis umgeht. Das Verfahren wird Kalibrierung genannt, also das Finden der passenden Parameter für einen konkreten Raum und die individuelle Raumsituation.
+
+>Wichtig: Die aus der bisherigen Firmware bekannte automatische Kalibrierung vom HLK gibt es nicht mehr. Man muss manuelle Einstellungen vornehmen. Welche Schritte notwendig sind, um das gleiche Ergebnis zu erreichen, wie die bisherige Kalibrierung, wird in einem Kapitel weiter unten beschrieben.
+
+Bei der Kalibrierung sollte man immer die technischen Rahmenbedingungen berücksichtigen:
+
+* Es gibt ein Grundrauschen, dass in jedem Raum pro Range unterschiedlich ist
+* Eine Stichprobe gibt ein statistisches Abbild des Raumes nach 30 Sekunden Messung aus - das kann 5 Sekunden vorher oder 5 Sekunden hinterher schon wieder ganz anders aussehen
+* Körper in Sensornähe liefern höhere Reflexionswerte als weiter entfernte, die Erkennbarkeit sinkt
+* Eine hohe Haltezeit vermindert die Wahrscheinlichkeit, dass ungewollt ausgeschaltet wird, erhöht aber zwangsläufig die Nachlaufzeit des Präsenzmelders, denn dieser bekommt auf jeden Fall so lange vom Sensor ein Präsenzsignal geliefert, wie die Haltezeit läuft. 
+
+Man muss für jeden relevanten Range die passenden Schwellwerte für Trigger und Halten finden. Dazu haben wir 2 Verfahren ausgearbeitet, die unterschiedlich arbeitsintensiv sind und beide zu guten bis sehr guten Erfolgen führen.
+
+Für alle Verfahren sollte man folgendes Vorbereiten:
+
+* Das Gerät muss eine PA haben und programmiert sein.
+* Die Funktion "Präsenz-Rohdaten auf den Bus senden" sollte aktiviert sein.
+* KO 21 (Ausgang Präsenz) und KO 23 (Ausgang Entfernung) sollten mit einer GA verknüpft sein
+* Die GA Prasenz und Entfernung sollten im Gruppenmonitor beobachtet werden. Noch besser direkt auf dem Handy, z.B. über die App "EasyKNX", die kann in der Kostenlos-Version 3 GA nutzen.
+
+
+#### **Kalibrierung mittels Stichprobe**
+
+Dieses Verfahren führt sehr schnell zu guten Erfolgen, ist aber nicht dazu geeignet, kritische Bereiche gesondert zu behandeln. Es nutzt die Werte, die bei einer Stichprobe im leeren Raum ermittelt wurden. Das Vorgehen ist folgendermaßen:
+
+1. Mit der ETS eine Stichprobe im leeren Raum nehmen.
+2. Trigger mit einer Hilfsfunktion berechnen (s.u.)
+3. Halten mit einer Hilfsfunktion berechnen (s.u.)
+4. "Werte Testen"-Button betätigen.
+5. Raum betreten, Zeit bis zum Einschalten beobachten über GA Präsenz
+6. Raum verlassen, Zeit bis zum Ausschalten beobachten über GA Präsenz
+7. Falls man nicht zufrieden ist, ab Punkt 2. mit anderen Werten erneut versuchen
+8. Falls man zufrieden ist, das Gerät normal über die ETS programmieren.
+
+##### **Trigger ermitteln**
+
+Für Trigger ist das relativ einfach: Da Bewegungen immer sehr hohe Reflexionswerte liefern und das Einschalten immer von einer Bewegung ausgelöst werden soll, kann man beim Trigger einfach Werte nehmen, die weit genug vom Maximum des Grundrauschens weg sind. Als Erfahrungswert hat sich hier "Maximum vom Grundrauschen im leeren Raum + 500" etabliert. Sollte wider Erwarten das Einschalten im leeren Raum trotzdem passieren, kann man den Wert auch auf 600 oder gar 1000 erhöhen. 
+
+Je höher der Wert, desto größer muss die Bewegung sein, damit ein Einschalten erfolgt. Hierüber kann man also steuern, ob man mit dem ganzen Körper im Raum sein muss oder ob alleine die Bewegung der Türklinke reicht, um ein Einschalten auszulösen.
+
+Vorgehen:
+
+1. In der Auswahlbox "Anzeige" (oben links auf der Seite in der ETS) den Wert "Mit Hilfsfunktionen" oder "Alles" auswählen.
+2. Kopiere "Stichprobe 1: Maximum" auswählen
+3. In das Offset-Feld 500 eintragen
+4. Als Ziel "nach Trigger" auswählen
+5. Kopieren-Button drücken
+
+Im Trigger stehen jetzt Werte, die um 500 größer sind als das Maximum der Stichprobe.
+
+##### **Halten**
+
+
+
+
+
+#### **Kritische Fälle**
+
+* Uhr mit Pendel
+* Kochtöpfe auf dem Herd
+* Ventilator im Raum
+* Waschmaschine
+* Metallmöbel
+* Wasserbett
 
 
 ## Grundsätzliche Funktion eines Präsenzkanals
