@@ -158,6 +158,23 @@ function PM_setCalibrationDataSet(device, online, progress, context) {
     online.connect();
     PM_setCalibrationData(device, online, progress, 7, "Hold", 10);
     PM_setCalibrationData(device, online, progress, 8, "Trigger", 50);
+    // wait for Sensor restart
+    var lPercent = 80;
+    // poll for sensor restart finished
+    var data = [0];
+    var resp = [0];
+    resp = resp.concat(0);
+    var lCancelled = false;
+    progress.setText("PM: HF-Sensor wird neu gestartet ...");
+    while (resp[0] == 0 && resp[1] == 0 && !lCancelled) {
+        data = [2];
+        data = data.concat(3, 0); // subcommand 2=wait end; zero-terminated string
+        lPercent += (100.0-lPercent)/5.0;
+        if (lPercent <= 100) progress.setProgress(lPercent);
+        PM_sleep(1000);
+        resp = online.invokeFunctionProperty(160, 6, data);
+        lCancelled = progress.isCanceled();
+    }
     online.disconnect();
     progress.setProgress(100);
 }

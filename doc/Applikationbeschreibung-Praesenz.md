@@ -19,7 +19,7 @@ Sie ist in die Bereiche
 
 gegliedert, wobei die Präsenzkanäle wiederum in bis zu 40 Kanäle untergliedert sind.
 
-Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM-LogicModule/blob/main/doc/Applikationsbeschreibung-Logik.md) beschrieben.
+Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md) beschrieben.
 
 
 ## Inhalte
@@ -35,6 +35,7 @@ Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM
     <!-- * [Normalmodus](#normalmodus)
     * [Automodus](#automodus)
     * [Manuellmodus](#manuellmodus-1) -->
+* [HF-Sensor Konfiguration](#hf-sensor-konfiguration)
 * [ETS Konfiguration](#ets-konfiguration) (Übersicht aller Konfigurationsseiten und Links zu Detailbeschreibung)
   * [Kommunikationsobjekte](#kommunikationsobjekte)
 * [Wichtige Anmerkungen](#wichtige-anmerkungen)
@@ -76,13 +77,26 @@ Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM
       * [Präsenzeinstellungen](#präsenzeinstellungen)
       * [Ausgang 1/2](#ausgang-12)
       * [Manuelle Bedienung](#manuelle-bedienung)
-* **+ Logikkanäle** (siehe [Dokumentation zum Logikmodul](https://github.com/OpenKNX/OAM-LogicModule/blob/main/doc/Applikationsbeschreibung-Logik.md); Achtung: Version beachten!)
+* **+ Logikkanäle** (siehe [Dokumentation zum Logikmodul](https://github.com/OpenKNX/OAM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md))
 
 
 
 ## Änderungshistorie
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
+
+01.12.2024: Firmware 3.5, Applikation 3.5
+
+* NEU: Für den HLK2420 wurde statt der Kalibrierung eine komplett neue Einstellungsseite entwickelt
+* NEU: Diagnose für den HLK2420 berücksichtigt die neuen Einstellungsmöglichkeiten
+* FIX: Der RealPresence hat bei 2 Usern nicht funktioniert, weil sie eine andere Hardware-Variante hatten, dies ist jetzt korrigiert.
+* FIX: Wenn nur PIR aktiviert war, wurde dessen Stromversorgung nicht eingeschaltet.
+* NEU: Große Doku-Erweiterung für die Einstellungsmöglichkeiten vom HLK-Sensor [HF-Sensor Konfiguration](#hf-sensor-konfiguration) (diese wird weiterhin in den nächsten Tagen erweitert)
+* NEU: Alle Firmware-Varianten haben ein neues Script zum KNX-Firmware-Update bekommen, das einen Upload über den KNX-Bus erlaubt.
+
+* Die enthaltene Logik hat jetzt die Version 3.4
+* Der enthaltene Konfigurations-Transfer hat jetzt die Version 0.2
+* Das enthaltene Taster-Modul hat jetzt die Version 0.5
 
 22.07.2024: Firmware 3.2, Applikation 3.2.1
 
@@ -788,16 +802,20 @@ Für alle Verfahren sollte man folgendes Vorbereiten:
 
 #### **Kalibrierung mittels Stichprobe**
 
-Dieses Verfahren führt sehr schnell zu guten Erfolgen, ist aber nicht dazu geeignet, kritische Bereiche gesondert zu behandeln. Es nutzt die Werte, die bei einer Stichprobe im leeren Raum ermittelt wurden. Das Vorgehen ist folgendermaßen:
+Dieses Verfahren führt sehr schnell zu guten Erfolgen, ist aber nicht dazu geeignet, kritische Bereiche gesondert zu behandeln. Es nutzt die Werte, die bei einer Stichprobe im leeren Raum ermittelt wurden. 
+
+Das Vorgehen ist folgendermaßen:
 
 1. Mit der ETS eine Stichprobe im leeren Raum nehmen.
-2. Trigger mit einer Hilfsfunktion berechnen (s.u.)
-3. Halten mit einer Hilfsfunktion berechnen (s.u.)
+2. Trigger mit einer Hilfsfunktion ermitteln (s.u.)
+3. Halten mit einer Hilfsfunktion ermitteln (s.u.)
 4. "Werte Testen"-Button betätigen.
 5. Raum betreten, Zeit bis zum Einschalten beobachten über GA Präsenz
 6. Raum verlassen, Zeit bis zum Ausschalten beobachten über GA Präsenz
 7. Falls man nicht zufrieden ist, ab Punkt 2. mit anderen Werten erneut versuchen
 8. Falls man zufrieden ist, das Gerät normal über die ETS programmieren.
+
+Man kann auch nach mehreren Tagen nachkorrigieren, auch einzelne Werte Ändern usw. Die besten Ergebnisse erreicht man, indem man seine Gewohnheiten und die diesbezüglichen Reaktion des Sensors beobachtet und dann passend nachjustiert.
 
 ##### **Trigger ermitteln**
 
@@ -815,20 +833,33 @@ Vorgehen:
 
 Im Trigger stehen jetzt Werte, die um 500 größer sind als das Maximum der Stichprobe.
 
-##### **Halten**
+##### **Halten ermitteln**
+
+Die Bestimmung des Schwellwertes für Halten ist der schwierigere Part, denn dieser Wert bestimmt, wie gut der Sensor eine sich nicht bewegende Person erkennt. Wenn der Sensor den Haltewert unterschreitet, wird allerdings nicht sofort ausgeschaltet, sondern noch die Haltezeit gewartet. Somit hängen die Werte für Halten auch von der Haltezeit ab:
+
+* Bei langer Haltezeit (so ab 25 Sekunden) kann man davon ausgehen, dass das Grundrauschen den Durchschnitt der Stichprobe repräsentiert. Somit muss Halten höher als der Durchschnittswert gewählt werden, damit es nicht zur Dauerpräsenz kommt. Hier hat sich die Standardabweichung als guter Referenzwert erwiesen. Man kann damit anfangen und falls notwendig, sich in kleinen (50er) Schritten nach oben oder unten an eine gute Erkennung herantasten.
+
+* Bei kurzer Haltezeit (2-5 Sekunden) liegen die meisten Reflexionswerte unter dem Durchschnitt, nur wenige liegen darüber. Die Wahrscheinlichkeit ist gering, dass in z.B. 3 Sekunden der gemessene Wert den ermittelten Durchschnitt der Stichprobe überschreitet. Und falls doch, dann wird er es in den nächsten 3 Sekunden nicht mehr tun und man hat mal eine etwas längere Haltezeit. Bei so kurzen Zeiten ist das kein Problem. Somit kann man bei kurzer Haltezeit den Durchschnitt als Halten-Wert nutzen und sich - falls Dauerpräsenz auftritt - in kleinen (50er) Schritten nach oben an eine gute Erkennung herantasten.
+
+Vorgehen:
+
+1. In der Auswahlbox "Anzeige" (oben links auf der Seite in der ETS) den Wert "Mit Hilfsfunktionen" oder "Alles" auswählen.
+2. Kopiere "Stichprobe 1: Standardabweichung" (bei langer Haltezeit) bzw. "Stichprobe 1: Durchschnitt" (bei kurzer Haltezeit) auswählen
+3. In das Offset-Feld 0 eintragen
+4. Als Ziel "nach Halten" auswählen
+5. Kopieren-Button drücken
 
 
+#### **Kritische Räume**
 
+Im folgenden sind noch einige potentiell kritische Räume aufgeführt, für die wir keine oder bisher wenige Testfälle haben, bei den wir aber Probleme befürchten:
 
-
-#### **Kritische Fälle**
-
-* Uhr mit Pendel
-* Kochtöpfe auf dem Herd
-* Ventilator im Raum
-* Waschmaschine
-* Metallmöbel
-* Wasserbett
+* Uhr mit Pendel - hier wird Dauerbewegung erzeugt, das dürfte den Sensor stark triggern und sollte mit einem hohen Trigger-Wert ausgeblendet werden. Mangels einer solchen Uhr nicht getestet, diesbezügliches Feedback gewünscht.
+* Kochtöpfe auf dem Herd - da diese aus Metall sind und gut reflektieren, könnten die zur Dauerpräsenz führen. Hier hat es geholfen, eine Stichprobe mit Töpfen auf allen 4 Kochplatten zu nehmen und mit diesen Werten den Halten-Wert zu ermitteln.
+* Ventilator im Raum - Ungetestet, fall dieser beweglich ist, dürfte das ein unlösbares Problem sein 
+* Waschmaschine - Ungetestet, sollte mit einem höheren Trigger- und Halten-Wert gut beherrschbar sein
+* Metallmöbel - Unproblematisch. Ein Umstellen der Möbel in andere Range-Bereiche könnte aber zu Dauerpräsenz führen, dann müsste man neue Halten-Werte ermitteln.
+* Wasserbett - Getestet und unproblematisch, allerdings werden auch kleine Bewegungen des Wasserbetts als Präsenz erkannt. Falls man also ein unberuhigtes Wasserbett hat, dass lange nachschwingt, dann wird für die Dauer des Nachschwingens Präsenz erkannt. 
 
 
 ## Grundsätzliche Funktion eines Präsenzkanals
