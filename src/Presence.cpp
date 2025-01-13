@@ -128,21 +128,17 @@ bool Presence::processCommand(const std::string iCmd, bool iDebugKo)
 
     if (iCmd.substr(0, 3) == "vpm")
     {
-        if (iCmd.length() == 5 && iCmd.substr(4, 1) == "h")
+        if (iCmd.length() == 6 && iCmd.substr(4, 2) == "hw")
         {
-            // Command help
-            openknx.console.writeDiagnoseKo("-> hw");
-            openknx.console.writeDiagnoseKo("");
-            openknx.console.writeDiagnoseKo("-> chNN pres");
-            openknx.console.writeDiagnoseKo("");
-            openknx.console.writeDiagnoseKo("-> chNN leave");
-            openknx.console.writeDiagnoseKo("");
-            openknx.console.writeDiagnoseKo("-> chNN state");
-            openknx.console.writeDiagnoseKo("");
-            openknx.console.writeDiagnoseKo("-> chNN all");
-            openknx.console.writeDiagnoseKo("");
+            // output hardware move/presence state
+            logInfoP("Move %d, Presence %d", mMove, mPresence);
+            if (iDebugKo)
+            {
+                openknx.console.writeDiagnoseKo("Move %d, Pres %d", mMove, mPresence);
+            }
+            lResult = true;
         }
-        else if (iCmd.length() >= 8 || iCmd.substr(4, 2) == "ch")
+        else if (iCmd.length() >= 8 && iCmd.substr(4, 2) == "ch")
         {
             // Command ch<nn>:
             // find channel and dispatch
@@ -153,14 +149,21 @@ bool Presence::processCommand(const std::string iCmd, bool iDebugKo)
                 lResult = mChannel[lIndex]->processCommand(iCmd, iDebugKo);
             }
         }
-        else if (iCmd.length() == 6 || iCmd.substr(4, 2) == "hw")
+        else if (iCmd.length() >= 5 && iCmd.substr(4, 1) == "h")
         {
-            // output hardware move/presence state
-            logInfoP("Move %d, Presence %d", mMove, mPresence);
-            if (iDebugKo)
-            {
-                openknx.console.writeDiagnoseKo("Move %d, Pres %d", mMove, mPresence);
+            // Command help
+            if (iDebugKo) {
+                openknx.console.writeDiagnoseKo("-> hw");
+                openknx.console.writeDiagnoseKo("");
+                openknx.console.writeDiagnoseKo("-> chNN pres");
+                openknx.console.writeDiagnoseKo("");
+                openknx.console.writeDiagnoseKo("-> chNN leave");
+                openknx.console.writeDiagnoseKo("");
+                openknx.console.writeDiagnoseKo("-> chNN state");
+                openknx.console.writeDiagnoseKo("");
+                openknx.console.writeDiagnoseKo("-> chNN all");
             }
+            showHelp();
             lResult = true;
         }
         else

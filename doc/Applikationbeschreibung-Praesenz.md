@@ -85,6 +85,13 @@ Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
+13.01.2025: Firmware 3.6.3, Applikation 3.6
+
+* FIX: Das Diagnosekommando "vpm help" führte zu einem Hänger des Gerätes, funktioniert jetzt sowohl im Diagnosemodus wie auch auf der Konsole
+* NEU: Das Diagnosekommando "vpm h" funktioniert jetzt auch auf der Konsole
+
+* Die enthaltene Logik hat jetzt die Version 3.5.3
+
 07.12.2024: Firmware 3.6.2, Applikation 3.6
 
 * FIX: Fix für das Logikmodul mit Auswirkungen auf das Präsenzmodul (Das neue Sendeverhalten am Ausgang und der Wiederholungsfilter haben sich leider gegenseitig beeinflusst und zu unerwarteten Ergebnissen geführt, die Logiken kaputt machen konnten. Deswegen ein Hotfix)
