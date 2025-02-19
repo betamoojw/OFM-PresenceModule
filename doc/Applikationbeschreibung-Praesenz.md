@@ -85,6 +85,11 @@ Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
+19.02.2025: Firmware 3.6.4, Applikation 3.6
+
+* FIX: Beim Wechsel der Tagesphase während einer Sperre wird jetzt nicht mehr geschaltet
+* FIX: Wenn ein PM-Kanal später startet und vorher die Tagesphase an das entsprechende KO gesendet wurde, wird jetzt diese Tagesphase als Startphase genommen (wurde bisher ignoriert)
+
 13.01.2025: Firmware 3.6.3, Applikation 3.6
 
 * FIX: Das Diagnosekommando "vpm help" führte zu einem Hänger des Gerätes, funktioniert jetzt sowohl im Diagnosemodus wie auch auf der Konsole
@@ -448,6 +453,12 @@ Diese Daten umfassen Informationen wie Präsenz, Bewegung, Bewegungsmoment, Bewe
 Mit einem Ja werden entsprechende Kommunikationsobjekte freigeschaltet, die diese Daten senden.
 
 ### **Helligkeit**
+
+Wenn ein Hardware-Lichtsensor installiert ist, kann das Präsenzmodul unabhängig von der internen Helligkeitsauswertung auch die Helligkeitswerte auf den Bus senden. 
+
+Falls auch das Sensormodul Teil der Applikation ist, so erscheinen 2 Helligkeits-KO in der Applikation, von denen eines durch die Einstellungen von Sensormodul, das andere durch die Einstellungen vom Präsenzmodul versorgt wird. Dies kann verwirrend sein.
+
+Bei der OpenKNX-Sensormodul-Applikation macht das KO 20 die Helligkeitsausgabe vom Präsenzmodul und das KO 87 die Helligkeitsausgabe vom Sensormodul.
 
 <!-- DOC -->
 #### **Helligkeits-Sensor**
