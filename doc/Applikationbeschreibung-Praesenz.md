@@ -85,6 +85,17 @@ Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
+26.08.2026: Firmware 3.11, Applikation 3.11:
+
+* NEU: Einige Begriffe werden vereinheitlicht (in allen Modulen, bei einigen Modulen mag das erst in der nächsten Version erscheinen):
+  * Der bisherige Begriff "Funktionslos" für Kanalaktivität wird gestrichen und durch eine neue Checkbox "Suspendiert" ersetzt.
+  * Die bisherigen Begriffe "Inaktiv" / "Aktiv" für Kanalaktivität werden durch "Deaktiviert" / "Aktiviert" ersetzt
+* NEU: Ein suspendierter Kanal zeigt dies jetzt in der Liste der Kanäle an. Dies erhöht die Wahrnehmung von suspendierten Kanälen und vereinfacht die Fehlersuche aufgrund von suspendierten Kanälen.
+* NEU: Kanäle werden jetzt auf einer eigenen Seite "Kanalauswahl" aktiviert. Deaktivierte Kanäle sind jetzt nicht mehr links im Baum sichtbar und erhöhen so die Übersichtlichkeit und die Rendering-Geschwindigkeit der ETS. 
+* NEU: Durch die neue Kanalauswahl wird die bisherige Eingabe "Verfügbare Kanäle" überflüssig.
+* NEU: Es können jetzt auch beliebige Kanäle deaktiviert und damit ausgeblendet werden. Bisher wurden nur Kanäle ausgeblendet, die oberhalb der Angabe "Verfügbare Kanäle" lagen.
+* WICHTIG: Beim Update von einer alten Version werden Kanäle, die "Funktionslos" sind, auf "Deaktiviert" geändert und verlieren alle zugeordneten GA - oder das Update schlägt fehl. Bitte VOR dem Update in der ETS auf "Aktiv" setzen und nach dem Update dann auf "Suspendiert" setzen.
+
 31.03.2026: Firmware 3.10.1, Applikation 3.10:
 
 - FIX: Kalibrierungsdaten, die vom HF-Sensor gelesen werden, liefern jetzt als Minimum den Wert 100. Der frühere Wert 0 (wenn der Sensor noch keine Stichprobe geliefert hatte) konnte zu Problemen führen, wenn man diese Werte einfach so übernommen hat.
@@ -920,6 +931,10 @@ Im folgenden sind noch einige potentiell kritische Räume aufgeführt, für die 
 * Metallmöbel - Unproblematisch. Ein Umstellen der Möbel in andere Range-Bereiche könnte aber zu Dauerpräsenz führen, dann müsste man neue Halten-Werte ermitteln.
 * Wasserbett - Getestet und unproblematisch, allerdings werden auch kleine Bewegungen des Wasserbetts als Präsenz erkannt. Falls man also ein unberuhigtes Wasserbett hat, dass lange nachschwingt, dann wird für die Dauer des Nachschwingens Präsenz erkannt. 
 
+<!-- DOC -->
+## **Kanalauswahl**
+
+Auf dieser Seite werden alle zur Verfügung stehenden Kanäle in einer Tabelle angezeigt. Pro Zeile kann ein Kanal aktiviert werden. Zusätzlich kann der Kanal auch benannt werden.
 
 ## Grundsätzliche Funktion eines Präsenzkanals
 
