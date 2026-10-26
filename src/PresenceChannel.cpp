@@ -458,12 +458,6 @@ void PresenceChannel::sendReadRequest(uint8_t iKoIndex)
     // in case the KO is transmitting (as in input), we know that an read request was already sent by someone else
     if (!lKo->initialized())
         lKo->requestObjectRead();
-    // else if (lKo->commFlag() != ComFlag::Transmitting)
-    // {
-    //     // if we suppress a read request because the input value already exists, we nevertheless have
-    //     // to react on this value as if a telegram would be received (because we are in a startup phase and we have to init correctly)
-    //     processInputKo(*lKo, iKoIndex);
-    // }
 }
 
 // send states after channel startup time, do this only once
@@ -513,6 +507,7 @@ void PresenceChannel::processReadRequests()
                 break;
             case 8:
                 pReadRequestPause = 1500;
+                // falls through
             default:
                 pReadRequestCounter = 255; // all read requests processed
                 startRunning();
@@ -559,12 +554,12 @@ void PresenceChannel::startRunning()
     // scene KO must not be initialized
 
     // at the beginning we are on day phase according to KO
-    uint8_t lDayPhase = 0;
+    int8_t lDayPhase = 0;
 
     lKo = getKo(PM_KoKOpDayPhase);
     if (lKo->initialized())
         lDayPhase = getDayPhaseFromKO();
-    if (lDayPhase == 255) // invalid phase
+    if (lDayPhase < 0)
         lDayPhase = 0;
     onDayPhase(lDayPhase, false);
     pCurrentState |= STATE_RUNNING;
@@ -590,11 +585,6 @@ int8_t PresenceChannel::getDayPhaseFromKO()
 
 void PresenceChannel::startDayPhasePrepare()
 {
-    // if (pCurrentState & STATE_KO_DAY_PHASE) {
-    //     uint8_t lValue = getKo(PM_KoKOpDayPhase)->value(getDPT(VAL_DPT_1));
-    //     logInfoP("CH %i: Zu viele Tagesphasen direkt aufeinanderfolgend!\n", channelIndex() + 1);
-    //     logInfoP("   Die Tagesphase %i wurde per KO gesetzt, ohne dass die vorhergehende Tagesphase ausgeführt werden konnte!\n", lValue + 1);
-    // }
     pCurrentState |= STATE_KO_DAY_PHASE;
 }
 
@@ -747,7 +737,6 @@ void PresenceChannel::startPresenceTrigger(bool iManual)
 {
     startPresence(true, iManual);
     startPresence(false, iManual);
-    // pPresenceDelayTime = delayTimerInit(); // diese Variante führt zu Issue #12
 }
 
 void PresenceChannel::startHardwarePresence()
@@ -933,7 +922,7 @@ void PresenceChannel::processPresenceShort()
     {
         // now short presence duration passed, check of also short presence delay passed
         uint32_t lEndTime = paramTimeDelay(PM_pAPresenceShortDurationBase, true) + paramTimeDelay(PM_pAPresenceShortDelayBase, true);
-        if (delayCheck(pPresenceShortDelayTime, lEndTime + 300))
+        if (delayCheck(pPresenceShortDelayTime, lEndTime + 300)) // +300ms safeguard when PM_pAPresenceShortDelayBase == 0
         {
             // there was no new presence evaluation during short presence delay, so we know, short presence is valid here
             endPresence();
@@ -1018,7 +1007,6 @@ void PresenceChannel::startLeaveRoom(bool iSuppressOutput)
             // in this case we just wait until downtime passed and afterwards we wait for the first Move
             startDowntime(); // has to be first to set correct state
             lIsLeaveRoom = true;
-            onManualChange(false);
             endPresence(lSend);
             break;
         case PT_LeaveRoomMode::Bewegung_Totzeit:
@@ -1352,7 +1340,8 @@ void PresenceChannel::onLock(bool iLockOn, PT_PMLock iLockOnSend, PT_PMLock iLoc
     uint8_t lLockType = ParamPM_pLockType;
     uint8_t lLockValue = (iLockOn << 1);
     PT_PMLock lLockSend = lLockValue ? iLockOnSend : iLockOffSend;
-    Dpt lDpt = DPT_Value_Temp;
+    bool lSendLock = false;
+    Dpt lDpt = DPT_Bool;
     switch (lLockType)
     {
         case VAL_PM_LockTypePriority:
@@ -1361,16 +1350,18 @@ void PresenceChannel::onLock(bool iLockOn, PT_PMLock iLockOnSend, PT_PMLock iLoc
             else
                 lLockValue |= (lLockSend == PT_PMLock::EIN_gesendet);
             lDpt = DPT_Value_1_Ucount;
+            lSendLock = true;
             break;
         case VAL_PM_LockTypeLock:
-            lLockValue = iLockOn;
+            lLockValue = ParamPM_pLockActive ? !iLockOn : iLockOn;
             lDpt = DPT_Bool;
+            lSendLock = true;
             break;
         default:
             // do nothing
             break;
     }
-    if (lDpt != DPT_Value_Temp)
+    if (lSendLock)
     {
         // send new state only if lock state changed
         if (lLockValue != pLastLockState)
@@ -1688,12 +1679,10 @@ void PresenceChannel::processOutput()
         if (lOutput & 1)
         {
             onOutput(VAL_PM_Output1Index, lOn);
-            // pOutput1CyclicTime = delayTimerInit();
         }
         if (lOutput & 2)
         {
             onOutput(VAL_PM_Output2Index, lOn);
-            // pOutput2CyclicTime = delayTimerInit();
         }
         syncOutput();
         forceOutput(false);
@@ -1730,17 +1719,6 @@ void PresenceChannel::onOutput(bool iOutputIndex, bool iOn)
         if (sTypeToDpt[(uint8_t)lType] == DPT_SceneNumber) lValue--;
         GroupObject* lKo = getKo(iOutputIndex ? PM_KoKOpOutput2 : PM_KoKOpOutput);
         lKo->value(lValue, sTypeToDpt[(uint8_t)lType]);
-        // seems to have side effects, currently disabled
-        // // startup fix: the very fist Telegram should not be sent, because it turns light on or off after startup, which is not intended
-        // if (lKo->initialized())
-        // {
-        //     lKo->value(lValue, getDPT(sTypeToDpt[lType]));
-        // }
-        // else
-        // {
-        //     // we do not send the telegram, but we set the value
-        //     lKo->valueNoSend(lValue, getDPT(sTypeToDpt[lType]));
-        // }
     }
 }
 

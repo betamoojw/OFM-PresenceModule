@@ -85,6 +85,10 @@ Alle Logikkanäle sind in der [Applikation Logik](https://github.com/OpenKNX/OAM
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
+25.10.2026: Firmware 3.11.1, Applikation 3.11:
+
+* FIX: Die invertierte Sperre funktionierte nicht, sie hat intern ein dauerhaftes hin- und her pendeln vom Sperre/Freigabe ausgelöst (konnte man beobachten, wenn beim Sperr-KO auch das S-Flag gesetzt wurde). Das Verhalten war von da an zufällig - je nachdem, ob intern gerade die Sperre an oder aus war.
+
 26.08.2026: Firmware 3.11, Applikation 3.11:
 
 * NEU: Einige Begriffe werden vereinheitlicht (in allen Modulen, bei einigen Modulen mag das erst in der nächsten Version erscheinen):
